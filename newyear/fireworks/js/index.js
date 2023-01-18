@@ -37,12 +37,12 @@ var Fireworks = function(){
 		self.partGravity = 1;
 		self.hueMin = 150;
 		self.hueMax = 200;
-		self.fworkSpeed = 2;
-		self.fworkAccel = 4;
+		self.发射速度 = 2;
+		self.发射速率 = 4;
 		self.hueVariance = 30;
 		self.flickerDensity = 20;
-		self.showShockwave = false;
-		self.showTarget = true;
+		self.冲击波 = false;
+		self.目标圆环 = true;
 		self.clearAlpha = 25;
 
 		self.canvasContainer.append(self.canvas);
@@ -178,10 +178,10 @@ var Fireworks = function(){
 		];
 		this.targetX = targetX;
 		this.targetY = targetY;
-		this.speed = self.fworkSpeed;
+		this.speed = self.发射速度;
 		this.angle = Math.atan2(targetY - startY, targetX - startX);
 		this.shockwaveAngle = Math.atan2(targetY - startY, targetX - startX)+(90*(Math.PI/180));
-		this.acceleration = self.fworkAccel/100;
+		this.acceleration = self.发射速率/100;
 		this.hue = self.currentHue;
 		this.brightness = rand(50, 80);
 		this.alpha = rand(50,100)/100;
@@ -202,7 +202,7 @@ var Fireworks = function(){
 		this.coordLast[0].x = this.x;
 		this.coordLast[0].y = this.y;
 		
-		if(self.showTarget){
+		if(self.目标圆环){
 			if(this.targetRadius < 8){
 				this.targetRadius += .25 * self.dt;
 			} else {
@@ -260,7 +260,7 @@ var Fireworks = function(){
 		self.ctx.strokeStyle = 'hsla('+this.hue+', 100%, '+this.brightness+'%, '+this.alpha+')';
 		self.ctx.stroke();	
 		
-		if(self.showTarget){
+		if(self.目标圆环){
 			self.ctx.save();
 			self.ctx.beginPath();
 			self.ctx.arc(Math.round(this.targetX), Math.round(this.targetY), this.targetRadius, 0, Math.PI*2, false)
@@ -270,7 +270,7 @@ var Fireworks = function(){
 			self.ctx.restore();
 		}
 			
-		if(self.showShockwave){
+		if(self.冲击波){
 			self.ctx.save();
 			self.ctx.translate(Math.round(this.x), Math.round(this.y));
 			self.ctx.rotate(this.shockwaveAngle);
@@ -399,12 +399,12 @@ var Fireworks = function(){
 var guiPresets = {
 			  "preset": "Default",
 			  "remembered": {
-				"Default": {
+				"默认方案": {
 				  "0": {
-					"fworkSpeed": 2,
-					"fworkAccel": 4,
-					"showShockwave": false,
-					"showTarget": true,
+					"发射速度": 2,
+					"发射速率": 4,
+					"冲击波": false,
+					"目标圆环": true,
 					"partCount": 30,
 					"partSpeed": 5,
 					"partSpeedVariance": 10,
@@ -419,12 +419,12 @@ var guiPresets = {
 					"clearAlpha": 25
 				  }
 				},
-				"Anti Gravity": {
+				"反重力": {
 				  "0": {
-					"fworkSpeed": 4,
-					"fworkAccel": 10,
-					"showShockwave": true,
-					"showTarget": false,
+					"发射速度": 4,
+					"发射速率": 10,
+					"冲击波": true,
+					"目标圆环": false,
 					"partCount": 150,
 					"partSpeed": 5,
 					"partSpeedVariance": 10,
@@ -439,12 +439,12 @@ var guiPresets = {
 					"clearAlpha": 50
 				  }
 				},
-				"Battle Field": {
+				"大金闪花": {
 				  "0": {
-					"fworkSpeed": 10,
-					"fworkAccel": 20,
-					"showShockwave": true,
-					"showTarget": true,
+					"发射速度": 10,
+					"发射速率": 20,
+					"冲击波": true,
+					"目标圆环": true,
 					"partCount": 200,
 					"partSpeed": 30,
 					"partSpeedVariance": 5,
@@ -459,12 +459,12 @@ var guiPresets = {
 					"clearAlpha": 40
 				  }
 				},
-				"Mega Blast": {
+				"圆头照明烟花": {
 				  "0": {
-					"fworkSpeed": 3,
-					"fworkAccel": 3,
-					"showShockwave": true,
-					"showTarget": true,
+					"发射速度": 3,
+					"发射速率": 3,
+					"冲击波": true,
+					"目标圆环": true,
 					"partCount": 500,
 					"partSpeed": 50,
 					"partSpeedVariance": 5,
@@ -479,12 +479,12 @@ var guiPresets = {
 					"clearAlpha": 20
 				  }
 				},
-				"Nimble": {
+				"彩珠筒": {
 				  "0": {
-					"fworkSpeed": 10,
-					"fworkAccel": 50,
-					"showShockwave": false,
-					"showTarget": false,
+					"发射速度": 10,
+					"发射速率": 50,
+					"冲击波": false,
+					"目标圆环": false,
 					"partCount": 120,
 					"partSpeed": 10,
 					"partSpeedVariance": 10,
@@ -499,12 +499,12 @@ var guiPresets = {
 					"clearAlpha": 80
 				  }
 				},
-				"Slow Launch": {
+				"树枝式": {
 				  "0": {
-					"fworkSpeed": 2,
-					"fworkAccel": 2,
-					"showShockwave": false,
-					"showTarget": false,
+					"发射速度": 2,
+					"发射速率": 2,
+					"冲击波": false,
+					"目标圆环": false,
 					"partCount": 200,
 					"partSpeed": 10,
 					"partSpeedVariance": 0,
@@ -519,12 +519,12 @@ var guiPresets = {
 					"clearAlpha": 10
 				  }
 				},
-				"Perma Trail": {
+				"定格": {
 				  "0": {
-					"fworkSpeed": 4,
-					"fworkAccel": 10,
-					"showShockwave": false,
-					"showTarget": false,
+					"发射速度": 4,
+					"发射速率": 10,
+					"冲击波": false,
+					"目标圆环": false,
 					"partCount": 150,
 					"partSpeed": 10,
 					"partSpeedVariance": 10,
@@ -575,13 +575,13 @@ var gui = new dat.GUI({
 var customContainer = document.getElementById('gui');
 customContainer.appendChild(gui.domElement);
 
-var guiFireworks = gui.addFolder('Fireworks');
-guiFireworks.add(fworks, 'fworkSpeed').min(1).max(10).step(1);
-guiFireworks.add(fworks, 'fworkAccel').min(0).max(50).step(1);
-guiFireworks.add(fworks, 'showShockwave');
-guiFireworks.add(fworks, 'showTarget');
+var guiFireworks = gui.addFolder('烟花');
+guiFireworks.add(fworks, '发射速度').min(1).max(10).step(1);
+guiFireworks.add(fworks, '发射速率').min(0).max(50).step(1);
+guiFireworks.add(fworks, '冲击波');
+guiFireworks.add(fworks, '目标圆环');
 
-var guiParticles = gui.addFolder('Particles');
+var guiParticles = gui.addFolder('尺寸');
 guiParticles.add(fworks, 'partCount').min(0).max(500).step(1);	
 guiParticles.add(fworks, 'partSpeed').min(1).max(100).step(1);
 guiParticles.add(fworks, 'partSpeedVariance').min(0).max(50).step(1);
@@ -590,12 +590,12 @@ guiParticles.add(fworks, 'partFriction').min(0).max(50).step(1);
 guiParticles.add(fworks, 'partGravity').min(-20).max(20).step(1);
 guiParticles.add(fworks, 'flickerDensity').min(0).max(50).step(1);
 
-var guiColor = gui.addFolder('Color');
+var guiColor = gui.addFolder('颜色');
 guiColor.add(fworks, 'hueMin').min(0).max(360).step(1);
 guiColor.add(fworks, 'hueMax').min(0).max(360).step(1);
 guiColor.add(fworks, 'hueVariance').min(0).max(180).step(1);
 
-var guiOther = gui.addFolder('Other');
+var guiOther = gui.addFolder('更多设置');
 guiOther.add(fworks, 'lineWidth').min(1).max(20).step(1);
 guiOther.add(fworks, 'clearAlpha').min(0).max(100).step(1);
 guiOther.add(fworks, 'clear').name('Clear');
