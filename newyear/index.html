@@ -7,10 +7,10 @@
     <title>DAN智云新年线上活动</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <!-- CSS
 	============================================ -->
-   
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="static/css/bootstrap.min.css">
     <!-- Icon Font CSS -->
@@ -19,1540 +19,883 @@
     <link rel="stylesheet" href="static/css/plugins.css">
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="static/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
 </head>
 
 <body>
-<header class="header-area header-padding-1 sticky-bar header-res-padding clearfix transparent-bar bg-white">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xl-2 col-lg-2 col-md-6 col-4">
-                <div class="logo">
-                    <a href="index.html">
-                        <!--<img alt="" src="static/picture/logo.png">--><h1><strong>DAN智云</strong></h1>
-                    </a>
+    <header class="header-area header-padding-1 sticky-bar header-res-padding clearfix transparent-bar bg-white">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-2 col-lg-2 col-md-6 col-4">
+                    <div class="logo">
+                        <a href="https://dansmartcloud.github.io">
+                            <!--<img alt="" src="static/picture/logo.png">-->
+                                <img alt="DAN智云" src="static/picture/logo.png" width=100%>
+                            
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-8 col-lg-8 d-none d-lg-block">
+                    <div class="main-menu">
+                        <nav>
+                            <ul>
+                                <li><a href="index.html">主页</a></li>
+                                <li><a href="#tm-section-2">活动</i> </a></li>
+                                <li><a href="#tm-section-3">抢购</a></li>
+                                <li><a href="#tm-section-4">联系我们</a></li>
+                                <li><a href="#tm-section-5">关于</a></li>
+                                <li><a href="https://dansmartcloud.github.io">官方网站</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-6 col-8">
+                    <div class="header-right-wrap">
+                        <div class="same-style header-search">
+                            <a class="search-active" href="#"><i class="pe-7s-search"></i></a>
+                            <div class="search-content">
+                                <form action="https://cn.bing.com/search" target="_self" method="get" data-aos="fade-up" data-aos-delay="200" name="wd">
+                                    <input type="text" id="search-input" name="q" placeholder="在bing搜索……" autofocus id="kw" autocomplete="off" name="wd"/>
+                                    <button class="button-search" type="submit" id="search-button"  type="submit" id="search-button" class="btn btn-primary" value="必应搜索"/><i class="pe-7s-search"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-xl-8 col-lg-8 d-none d-lg-block">
-                <div class="main-menu">
-                    <nav>
-                        <ul>
+            <div class="mobile-menu-area">
+                <div class="mobile-menu">
+                    <nav id="mobile-menu-active">
+                        <ul class="menu-overflow">
                             <li><a href="index.html">主页</a></li>
-                            <li><a href="#">活动</i> </a></li>
-                            <li><a href="#">抢购</a></li></li>
-                            <li><a href="#">联系我们</a></li>
-                            <li><a href="#">关于</a></li>
-                            <li><a href="#">官方网站</a></li>
+                            <li><a href="#tm-section-2">活动</a></li>
+                            <li><a href="#tm-section-3">抢购</a></li>
+                            <li><a href="#tm-section-4">联系我们</a></li>
+                            <li><a href="#tm-section-5">关于</a></li>
+                            <li><a href="https://dansmartcloud.github.io">官方网站</a></li>
                         </ul>
                     </nav>
                 </div>
             </div>
-            <div class="col-xl-2 col-lg-2 col-md-6 col-8">
-                   <div class="header-right-wrap">
-                    <div class="same-style header-search">
-                        <a class="search-active" href="#"><i class="pe-7s-search"></i></a>
-                        <div class="search-content">
-                            <form action="#">
-                                <input type="text" placeholder="Search" />
-                                <button class="button-search"><i class="pe-7s-search"></i></button>
-                            </form>
-                        </div> 
-                    </div>
-                    <div class="same-style account-satting">
-                        <a class="account-satting-active" href="#"><i class="pe-7s-user-female"></i></a>
-                        <div class="account-dropdown">
-                            <ul>
-                                <li><a href="#">Login</a></li>
-                                <li><a href="#">Register</a></li>
-                                <li><a href="#">Wishlist  </a></li>
-                                <li><a href="#">my account</a></li>
-                            </ul>
+        </div>
+    </header>
+    <div class="slider-area">
+        <span class="body-effect effect-snow"></span>
+        <div class="single-slider slider-height-14 bg-img" style="background-image:url(static/images/slider-7.jpg);">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-12 col-sm-6 align-self-center">
+                        <div class="slider-content-14">
+                            <h3 class="wow fadeInLeft">2023新年活动</h3>
+                            <h1 class="wow fadeInLeft">DAN智云<br>活动中心与线上商城</h1>
+                            <div class="slider-btn btn-hover">
+                                <a class="wow fadeInLeft" href="#tm-section-2">立即开始></a>
+                            </div>
                         </div>
                     </div>
-                    <div class="same-style header-wishlist">
-                        <a href="#"><i class="pe-7s-like"></i></a>
-                    </div>
-                    <div class="same-style cart-wrap">
-                        <button class="icon-cart">
-                            <i class="pe-7s-shopbag"></i>
-                            <span class="count-style">02</span>
-                        </button>
-                        <div class="shopping-cart-content">
-                            <ul>
-                                <li class="single-shopping-cart">
-                                    <div class="shopping-cart-img">
-                                        <a href="#"><img alt="" src="static/picture/cart-1.png"></a>
-                                    </div>
-                                    <div class="shopping-cart-title">
-                                        <h4><a href="#">T- Shart & Jeans </a></h4>
-                                        <h6>Qty: 02</h6>
-                                        <span>$260.00</span>
-                                    </div>
-                                    <div class="shopping-cart-delete">
-                                        <a href="#"><i class="fa fa-times-circle"></i></a>
-                                    </div>
-                                </li>
-                                <li class="single-shopping-cart">
-                                    <div class="shopping-cart-img">
-                                        <a href="#"><img alt="" src="static/picture/cart-2.png"></a>
-                                    </div>
-                                    <div class="shopping-cart-title">
-                                        <h4><a href="#">T- Shart & Jeans </a></h4>
-                                        <h6>Qty: 02</h6>
-                                        <span>$260.00</span>
-                                    </div>
-                                    <div class="shopping-cart-delete">
-                                        <a href="#"><i class="fa fa-times-circle"></i></a>
-                                    </div>
-                                </li>
-                            </ul>
-                            <div class="shopping-cart-total">
-                                <h4>Shipping : <span>$20.00</span></h4>
-                                <h4>Total : <span class="shop-total">$260.00</span></h4>
-                            </div>
-                            <div class="shopping-cart-btn btn-hover text-center">
-                                <a class="default-btn" href="#">view cart</a>
-                                <a class="default-btn" href="#">checkout</a>
-                            </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-12 col-sm-6">
+                        <div class="slider-single-img-14">
+                            <img class="wow fadeInRight" src="static/picture/single-slide-hm14-1.png" alt="">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="mobile-menu-area">
-            <div class="mobile-menu">
-                <nav id="mobile-menu-active">
-                    <ul class="menu-overflow">
-                        <li><a href="index.html">HOME</a></li>
-                        <li><a href="#">Shop</a></li>
-                        <li><a href="#">Collection</a></li>
-                        <li><a href="#">Pages</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
     </div>
-</header>
-<div class="slider-area">
-    <span class="body-effect effect-snow"></span>
-    <div class="single-slider slider-height-14 bg-img" style="background-image:url(static/images/slider-7.jpg);">
+    <div class="banner-area pb-90 pt-120" id="tm-section-2">
         <div class="container">
             <div class="row">
-                <div class="col-xl-6 col-lg-6 col-md-6 col-12 col-sm-6 align-self-center">
-                    <div class="slider-content-14">
-                        <h3 class="wow fadeInLeft">Christmas Sale</h3>
-                        <h1 class="wow fadeInLeft">New Year Offer <br>Collection</h1>
-                        <div class="slider-btn btn-hover">
-                            <a class="wow fadeInLeft" href="#">SHOP NOW</a>
+                <div class="col-lg-4 col-md-4">
+                    <div class="single-banner banner-red-color mb-30">
+                        <a href="fireworks/index.html"><img src="static/picture/banner-18.png" alt=""></a>
+                        <div class="banner-content">
+                            <h3>放烟花</h3>
+                            <h4>线上放烟花<span>支持环保</span></h4>
+                            <a href="/dansmartcloud.github.io/another/htmlfirework.html"><i class="fa fa-long-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-6 col-lg-6 col-md-6 col-12 col-sm-6">
-                    <div class="slider-single-img-14">
-                        <img class="wow fadeInRight" src="static/picture/single-slide-hm14-1.png" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="banner-area pb-90 pt-120">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-4">
-                <div class="single-banner banner-red-color mb-30">
-                    <a href="#"><img src="static/picture/banner-18.png" alt=""></a>
-                    <div class="banner-content">
-                        <h3>Gift Box</h3>
-                        <h4>Starting at <span>$99.00</span></h4>
-                        <a href="#"><i class="fa fa-long-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4">
-                <div class="single-banner banner-red-color mb-30">
-                    <a href="#"><img src="static/picture/banner-19.png" alt=""></a>
-                    <div class="banner-content">
-                        <h3>Gift Box</h3>
-                        <h4>Starting at <span>$79.00</span></h4>
-                        <a href="#"><i class="fa fa-long-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4">
-                <div class="single-banner banner-red-color mb-30">
-                    <a href="#"><img src="static/picture/banner-20.png" alt=""></a>
-                    <div class="banner-content">
-                        <h3>Gift Box</h3>
-                        <h4>Starting at <span>$79.00</span></h4>
-                        <a href="#"><i class="fa fa-long-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="product-area pb-120 bg-gray-5 pt-120">
-    <div class="container">
-        <div class="product-top-bar section-border mb-60">
-            <div class="section-title-4">
-                <h3 class="bg-gray-5">Featured Products</h3>
-            </div>
-            <div class="product-tab-list-3 nav bg-gray-5">
-                <a class="active" data-bs-toggle="tab" href="#hm14-tab2">
-                    <h4>All </h4>
-                </a>
-                <a data-bs-toggle="tab" href="#hm14-tab1">
-                    <h4>Winter </h4>
-                </a>
-                <a data-bs-toggle="tab" href="#hm14-tab3">
-                    <h4> Various  </h4>
-                </a>
-                <a data-bs-toggle="tab" href="#hm14-tab4">
-                    <h4>Greens </h4>
-                </a>
-            </div>
-        </div>
-        <div class="tab-content jump">
-            <div class="tab-pane" id="hm14-tab1">
-                <div class="product-slider-active owl-carousel owl-dot-none">
-                    <div class="product-wrap-2 mb-25">
-                        <div class="product-img">
-                            <a href="#">
-                                <img class="default-img" src="static/picture/hm14-pro-4.jpg" alt="">
-                                <img class="hover-img" src="static/picture/hm14-pro-4.jpg" alt="">
-                            </a>
-                            <span class="red">-10%</span>
-                            <div class="product-action-2 product-action-2-red">
-                                <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-content-2">
-                            <div class="title-price-wrap-2">
-                                <h3><a href="#">Multiple Strings Lights</a></h3>
-                                <div class="price-2">
-                                    <span>$ 60.00</span>
-                                    <span class="old red">$ 60.00</span>
-                                </div>
-                            </div>
-                            <div class="pro-wishlist-2">
-                                <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-wrap-2 mb-25">
-                        <div class="product-img">
-                            <a href="#">
-                                <img class="default-img" src="static/picture/hm14-pro-3.jpg" alt="">
-                                <img class="hover-img" src="static/picture/hm14-pro-3.jpg" alt="">
-                            </a>
-                            <span class="purple">New</span>
-                            <div class="product-action-2 product-action-2-red">
-                                <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-content-2">
-                            <div class="title-price-wrap-2">
-                                <h3><a href="#">Holiday Candle</a></h3>
-                                <div class="price-2">
-                                    <span>$ 70.00</span>
-                                </div>
-                            </div>
-                            <div class="pro-wishlist-2">
-                                <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-wrap-2 mb-25">
-                        <div class="product-img">
-                            <a href="#">
-                                <img class="default-img" src="static/picture/hm14-pro-1.jpg" alt="">
-                                <img class="hover-img" src="static/picture/hm14-pro-1.jpg" alt="">
-                            </a>
-                            <span class="red">-10%</span>
-                            <div class="product-action-2 product-action-2-red">
-                                <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-content-2">
-                            <div class="title-price-wrap-2">
-                                <h3><a href="#">Santa Claus Cap</a></h3>
-                                <div class="price-2">
-                                    <span>$ 40.00</span>
-                                    <span class="old red">$ 50.00</span>
-                                </div>
-                            </div>
-                            <div class="pro-wishlist-2">
-                                <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-wrap-2 mb-25">
-                        <div class="product-img">
-                            <a href="#">
-                                <img class="default-img" src="static/picture/hm14-pro-2.jpg" alt="">
-                                <img class="hover-img" src="static/picture/hm14-pro-2.jpg" alt="">
-                            </a>
-                            <span class="purple">New</span>
-                            <div class="product-action-2 product-action-2-red">
-                                <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-content-2">
-                            <div class="title-price-wrap-2">
-                                <h3><a href="#">Fresh Poinsettias</a></h3>
-                                <div class="price-2">
-                                    <span>$ 80.00</span>
-                                </div>
-                            </div>
-                            <div class="pro-wishlist-2">
-                                <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-wrap-2 mb-25">
-                        <div class="product-img">
-                            <a href="#">
-                                <img class="default-img" src="static/picture/hm14-pro-4.jpg" alt="">
-                                <img class="hover-img" src="static/picture/hm14-pro-4.jpg" alt="">
-                            </a>
-                            <span class="purple">New</span>
-                            <div class="product-action-2 product-action-2-red">
-                                <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-content-2">
-                            <div class="title-price-wrap-2">
-                                <h3><a href="#">Multiple Strings Lights</a></h3>
-                                <div class="price-2">
-                                    <span>$ 80.00</span>
-                                </div>
-                            </div>
-                            <div class="pro-wishlist-2">
-                                <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
-                            </div>
+                <div class="col-lg-4 col-md-4">
+                    <div class="single-banner banner-red-color mb-30">
+                        <a href="#"><img src="static/picture/banner-19.png" alt=""></a>
+                        <div class="banner-content">
+                            <h3>留言板</h3>
+                            <h4>线上新年送祝福<span>兔年吉祥</span></h4>
+                            <a href="#"><i class="fa fa-long-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="pro-view-more text-center">
-                    <a href="#"><i class="fa fa-refresh"></i> View More</a>
-                </div>
-            </div>
-            <div class="tab-pane active" id="hm14-tab2">
-                <div class="product-slider-active owl-carousel owl-dot-none">
-                    <div class="product-wrap-2 mb-25">
-                        <div class="product-img">
-                            <a href="#">
-                                <img class="default-img" src="static/picture/hm14-pro-1.jpg" alt="">
-                                <img class="hover-img" src="static/picture/hm14-pro-1.jpg" alt="">
-                            </a>
-                            <span class="red">-10%</span>
-                            <div class="product-action-2 product-action-2-red">
-                                <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-content-2">
-                            <div class="title-price-wrap-2">
-                                <h3><a href="#">Santa Claus Cap</a></h3>
-                                <div class="price-2">
-                                    <span>$ 60.00</span>
-                                    <span class="old red">$ 60.00</span>
-                                </div>
-                            </div>
-                            <div class="pro-wishlist-2">
-                                <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-wrap-2 mb-25">
-                        <div class="product-img">
-                            <a href="#">
-                                <img class="default-img" src="static/picture/hm14-pro-2.jpg" alt="">
-                                <img class="hover-img" src="static/picture/hm14-pro-2.jpg" alt="">
-                            </a>
-                            <span class="purple">New</span>
-                            <div class="product-action-2 product-action-2-red">
-                                <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-content-2">
-                            <div class="title-price-wrap-2">
-                                <h3><a href="#">Fresh Poinsettias</a></h3>
-                                <div class="price-2">
-                                    <span>$ 70.00</span>
-                                </div>
-                            </div>
-                            <div class="pro-wishlist-2">
-                                <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-wrap-2 mb-25">
-                        <div class="product-img">
-                            <a href="#">
-                                <img class="default-img" src="static/picture/hm14-pro-3.jpg" alt="">
-                                <img class="hover-img" src="static/picture/hm14-pro-3.jpg" alt="">
-                            </a>
-                            <span class="red">-10%</span>
-                            <div class="product-action-2 product-action-2-red">
-                                <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-content-2">
-                            <div class="title-price-wrap-2">
-                                <h3><a href="#">Holiday Candle</a></h3>
-                                <div class="price-2">
-                                    <span>$ 40.00</span>
-                                    <span class="old red">$ 50.00</span>
-                                </div>
-                            </div>
-                            <div class="pro-wishlist-2">
-                                <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-wrap-2 mb-25">
-                        <div class="product-img">
-                            <a href="#">
-                                <img class="default-img" src="static/picture/hm14-pro-4.jpg" alt="">
-                                <img class="hover-img" src="static/picture/hm14-pro-4.jpg" alt="">
-                            </a>
-                            <span class="purple">New</span>
-                            <div class="product-action-2 product-action-2-red">
-                                <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-content-2">
-                            <div class="title-price-wrap-2">
-                                <h3><a href="#">Multiple Strings Lights</a></h3>
-                                <div class="price-2">
-                                    <span>$ 80.00</span>
-                                </div>
-                            </div>
-                            <div class="pro-wishlist-2">
-                                <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-wrap-2 mb-25">
-                        <div class="product-img">
-                            <a href="#">
-                                <img class="default-img" src="static/picture/hm14-pro-2.jpg" alt="">
-                                <img class="hover-img" src="static/picture/hm14-pro-2.jpg" alt="">
-                            </a>
-                            <span class="purple">New</span>
-                            <div class="product-action-2 product-action-2-red">
-                                <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-content-2">
-                            <div class="title-price-wrap-2">
-                                <h3><a href="#">Fresh Poinsettias</a></h3>
-                                <div class="price-2">
-                                    <span>$ 80.00</span>
-                                </div>
-                            </div>
-                            <div class="pro-wishlist-2">
-                                <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="pro-view-more text-center">
-                    <a href="#"><i class="fa fa-refresh"></i> View More</a>
-                </div>
-            </div>
-            <div class="tab-pane" id="hm14-tab3">
-                <div class="product-slider-active owl-carousel owl-dot-none">
-                    <div class="product-wrap-2 mb-25">
-                        <div class="product-img">
-                            <a href="#">
-                                <img class="default-img" src="static/picture/hm14-pro-3.jpg" alt="">
-                                <img class="hover-img" src="static/picture/hm14-pro-3.jpg" alt="">
-                            </a>
-                            <span class="red">-10%</span>
-                            <div class="product-action-2 product-action-2-red">
-                                <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-content-2">
-                            <div class="title-price-wrap-2">
-                                <h3><a href="#">Holiday Candle</a></h3>
-                                <div class="price-2">
-                                    <span>$ 60.00</span>
-                                    <span class="old red">$ 60.00</span>
-                                </div>
-                            </div>
-                            <div class="pro-wishlist-2">
-                                <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-wrap-2 mb-25">
-                        <div class="product-img">
-                            <a href="#">
-                                <img class="default-img" src="static/picture/hm14-pro-1.jpg" alt="">
-                                <img class="hover-img" src="static/picture/hm14-pro-1.jpg" alt="">
-                            </a>
-                            <span class="purple">New</span>
-                            <div class="product-action-2 product-action-2-red">
-                                <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-content-2">
-                            <div class="title-price-wrap-2">
-                                <h3><a href="#">Santa Claus Cap</a></h3>
-                                <div class="price-2">
-                                    <span>$ 70.00</span>
-                                </div>
-                            </div>
-                            <div class="pro-wishlist-2">
-                                <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-wrap-2 mb-25">
-                        <div class="product-img">
-                            <a href="#">
-                                <img class="default-img" src="static/picture/hm14-pro-4.jpg" alt="">
-                                <img class="hover-img" src="static/picture/hm14-pro-4.jpg" alt="">
-                            </a>
-                            <span class="red">-10%</span>
-                            <div class="product-action-2 product-action-2-red">
-                                <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-content-2">
-                            <div class="title-price-wrap-2">
-                                <h3><a href="#">Multiple Strings Lights</a></h3>
-                                <div class="price-2">
-                                    <span>$ 40.00</span>
-                                    <span class="old red">$ 50.00</span>
-                                </div>
-                            </div>
-                            <div class="pro-wishlist-2">
-                                <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-wrap-2 mb-25">
-                        <div class="product-img">
-                            <a href="#">
-                                <img class="default-img" src="static/picture/hm14-pro-2.jpg" alt="">
-                                <img class="hover-img" src="static/picture/hm14-pro-2.jpg" alt="">
-                            </a>
-                            <span class="purple">New</span>
-                            <div class="product-action-2 product-action-2-red">
-                                <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-content-2">
-                            <div class="title-price-wrap-2">
-                                <h3><a href="#">Fresh Poinsettias</a></h3>
-                                <div class="price-2">
-                                    <span>$ 80.00</span>
-                                </div>
-                            </div>
-                            <div class="pro-wishlist-2">
-                                <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-wrap-2 mb-25">
-                        <div class="product-img">
-                            <a href="#">
-                                <img class="default-img" src="static/picture/hm14-pro-1.jpg" alt="">
-                                <img class="hover-img" src="static/picture/hm14-pro-1.jpg" alt="">
-                            </a>
-                            <span class="purple">New</span>
-                            <div class="product-action-2 product-action-2-red">
-                                <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-content-2">
-                            <div class="title-price-wrap-2">
-                                <h3><a href="#">Santa Claus Cap</a></h3>
-                                <div class="price-2">
-                                    <span>$ 80.00</span>
-                                </div>
-                            </div>
-                            <div class="pro-wishlist-2">
-                                <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="pro-view-more text-center">
-                    <a href="#"><i class="fa fa-refresh"></i> View More</a>
-                </div>
-            </div>
-            <div class="tab-pane" id="hm14-tab4">
-                <div class="product-slider-active owl-carousel owl-dot-none">
-                    <div class="product-wrap-2 mb-25">
-                        <div class="product-img">
-                            <a href="#">
-                                <img class="default-img" src="static/picture/hm14-pro-2.jpg" alt="">
-                                <img class="hover-img" src="static/picture/hm14-pro-2.jpg" alt="">
-                            </a>
-                            <span class="red">-10%</span>
-                            <div class="product-action-2 product-action-2-red">
-                                <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-content-2">
-                            <div class="title-price-wrap-2">
-                                <h3><a href="#">Fresh Poinsettias</a></h3>
-                                <div class="price-2">
-                                    <span>$ 60.00</span>
-                                    <span class="old red">$ 60.00</span>
-                                </div>
-                            </div>
-                            <div class="pro-wishlist-2">
-                                <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-wrap-2 mb-25">
-                        <div class="product-img">
-                            <a href="#">
-                                <img class="default-img" src="static/picture/hm14-pro-1.jpg" alt="">
-                                <img class="hover-img" src="static/picture/hm14-pro-1.jpg" alt="">
-                            </a>
-                            <span class="purple">New</span>
-                            <div class="product-action-2 product-action-2-red">
-                                <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-content-2">
-                            <div class="title-price-wrap-2">
-                                <h3><a href="#">Santa Claus Cap</a></h3>
-                                <div class="price-2">
-                                    <span>$ 70.00</span>
-                                </div>
-                            </div>
-                            <div class="pro-wishlist-2">
-                                <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-wrap-2 mb-25">
-                        <div class="product-img">
-                            <a href="#">
-                                <img class="default-img" src="static/picture/hm14-pro-4.jpg" alt="">
-                                <img class="hover-img" src="static/picture/hm14-pro-4.jpg" alt="">
-                            </a>
-                            <span class="red">-10%</span>
-                            <div class="product-action-2 product-action-2-red">
-                                <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-content-2">
-                            <div class="title-price-wrap-2">
-                                <h3><a href="#">Multiple Strings Lights</a></h3>
-                                <div class="price-2">
-                                    <span>$ 40.00</span>
-                                    <span class="old red">$ 50.00</span>
-                                </div>
-                            </div>
-                            <div class="pro-wishlist-2">
-                                <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-wrap-2 mb-25">
-                        <div class="product-img">
-                            <a href="#">
-                                <img class="default-img" src="static/picture/hm14-pro-3.jpg" alt="">
-                                <img class="hover-img" src="static/picture/hm14-pro-3.jpg" alt="">
-                            </a>
-                            <span class="purple">New</span>
-                            <div class="product-action-2 product-action-2-red">
-                                <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-content-2">
-                            <div class="title-price-wrap-2">
-                                <h3><a href="#">Holiday Candle</a></h3>
-                                <div class="price-2">
-                                    <span>$ 80.00</span>
-                                </div>
-                            </div>
-                            <div class="pro-wishlist-2">
-                                <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-wrap-2 mb-25">
-                        <div class="product-img">
-                            <a href="#">
-                                <img class="default-img" src="static/picture/hm14-pro-2.jpg" alt="">
-                                <img class="hover-img" src="static/picture/hm14-pro-2.jpg" alt="">
-                            </a>
-                            <span class="purple">New</span>
-                            <div class="product-action-2 product-action-2-red">
-                                <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-content-2">
-                            <div class="title-price-wrap-2">
-                                <h3><a href="#">Fresh Poinsettias</a></h3>
-                                <div class="price-2">
-                                    <span>$ 80.00</span>
-                                </div>
-                            </div>
-                            <div class="pro-wishlist-2">
-                                <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="pro-view-more text-center">
-                    <a href="#"><i class="fa fa-refresh"></i> View More</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="bg-png-1">
-        <img class="wow fadeInLeft" src="static/picture/section-bg-1.png" alt="">
-    </div>
-</div>
-<div class="funfact-area pt-110 pb-120">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6 col-md-6">
-                <div class="gift-img">
-                    <a href="#"><img class="wow fadeInLeft" src="static/picture/deal-hm14.png" alt=""></a>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
-                <div class="funfact-content funfact-res mt-90 text-center">
-                    <h2>Deal of the day</h2>
-                    <div class="timer">
-                        <div data-countdown="2022/06/01"></div>
-                    </div>
-                    <div class="funfact-btn funfact-btn-red btn-hover">
-                        <a href="#">SHOP NOW</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="bg-png-2">
-        <img class="wow fadeInRight" src="static/picture/section-bg-1.png" alt="">
-    </div>
-</div>
-<div class="testimonial-area bg-img mt-195" style="background-image:url(static/images/bg-2.jpg);">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6 col-md-7">
-                <div class="testimonial-active-2 owl-carousel owl-dot-none">
-                    <div class="single-testimonial-2 text-center">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmo tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
-                        <div class="client-info">
-                            <i class="fa fa-map-signs"></i>
-                            <h5>Grace Alvarado</h5>
-                            <span>Customer</span>
-                        </div>
-                    </div>
-                    <div class="single-testimonial-2 text-center">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmo tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
-                        <div class="client-info">
-                            <i class="fa fa-map-signs"></i>
-                            <h5>Grace Alvarado</h5>
-                            <span>Customer</span>
-                        </div>
-                    </div>
-                    <div class="single-testimonial-2 text-center">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmo tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
-                        <div class="client-info">
-                            <i class="fa fa-map-signs"></i>
-                            <h5>Grace Alvarado</h5>
-                            <span>Customer</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-5">
-                <div class="testimonial-img-2">
-                    <img class="wow fadeInUp" src="static/picture/testi-2.png" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="product-area pb-90 bg-gray-5 pt-120">
-    <div class="container">
-        <div class="product-top-bar section-border mb-60">
-            <div class="section-title-4">
-                <h3 class="bg-gray-5">Best Products</h3>
-            </div>
-            <div class="product-tab-list-3 nav bg-gray-5">
-                <a class="active" data-bs-toggle="tab" href="#hm14-tab5">
-                    <h4>All </h4>
-                </a>
-                <a data-bs-toggle="tab" href="#hm14-tab6">
-                    <h4>Winter </h4>
-                </a>
-                <a data-bs-toggle="tab" href="#hm14-tab7">
-                    <h4> Various  </h4>
-                </a>
-                <a data-bs-toggle="tab" href="#hm14-tab8">
-                    <h4>Greens </h4>
-                </a>
-            </div>
-        </div>
-        <div class="tab-content jump">
-            <div class="tab-pane" id="hm14-tab6">
-                <div class="product-slider-active owl-carousel owl-dot-none">
-                    <div class="product-wrap-2 mb-25">
-                        <div class="product-img">
-                            <a href="#">
-                                <img class="default-img" src="static/picture/hm14-pro-4.jpg" alt="">
-                                <img class="hover-img" src="static/picture/hm14-pro-4.jpg" alt="">
-                            </a>
-                            <span class="red">-10%</span>
-                            <div class="product-action-2 product-action-2-red">
-                                <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-content-2">
-                            <div class="title-price-wrap-2">
-                                <h3><a href="#">Multiple Strings Lights</a></h3>
-                                <div class="price-2">
-                                    <span>$ 60.00</span>
-                                    <span class="old red">$ 60.00</span>
-                                </div>
-                            </div>
-                            <div class="pro-wishlist-2">
-                                <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-wrap-2 mb-25">
-                        <div class="product-img">
-                            <a href="#">
-                                <img class="default-img" src="static/picture/hm14-pro-3.jpg" alt="">
-                                <img class="hover-img" src="static/picture/hm14-pro-3.jpg" alt="">
-                            </a>
-                            <span class="purple">New</span>
-                            <div class="product-action-2 product-action-2-red">
-                                <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-content-2">
-                            <div class="title-price-wrap-2">
-                                <h3><a href="#">Holiday Candle</a></h3>
-                                <div class="price-2">
-                                    <span>$ 70.00</span>
-                                </div>
-                            </div>
-                            <div class="pro-wishlist-2">
-                                <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-wrap-2 mb-25">
-                        <div class="product-img">
-                            <a href="#">
-                                <img class="default-img" src="static/picture/hm14-pro-1.jpg" alt="">
-                                <img class="hover-img" src="static/picture/hm14-pro-1.jpg" alt="">
-                            </a>
-                            <span class="red">-10%</span>
-                            <div class="product-action-2 product-action-2-red">
-                                <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-content-2">
-                            <div class="title-price-wrap-2">
-                                <h3><a href="#">Santa Claus Cap</a></h3>
-                                <div class="price-2">
-                                    <span>$ 40.00</span>
-                                    <span class="old red">$ 50.00</span>
-                                </div>
-                            </div>
-                            <div class="pro-wishlist-2">
-                                <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-wrap-2 mb-25">
-                        <div class="product-img">
-                            <a href="#">
-                                <img class="default-img" src="static/picture/hm14-pro-2.jpg" alt="">
-                                <img class="hover-img" src="static/picture/hm14-pro-2.jpg" alt="">
-                            </a>
-                            <span class="purple">New</span>
-                            <div class="product-action-2 product-action-2-red">
-                                <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-content-2">
-                            <div class="title-price-wrap-2">
-                                <h3><a href="#">Fresh Poinsettias</a></h3>
-                                <div class="price-2">
-                                    <span>$ 80.00</span>
-                                </div>
-                            </div>
-                            <div class="pro-wishlist-2">
-                                <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-wrap-2 mb-25">
-                        <div class="product-img">
-                            <a href="#">
-                                <img class="default-img" src="static/picture/hm14-pro-4.jpg" alt="">
-                                <img class="hover-img" src="static/picture/hm14-pro-4.jpg" alt="">
-                            </a>
-                            <span class="purple">New</span>
-                            <div class="product-action-2 product-action-2-red">
-                                <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-content-2">
-                            <div class="title-price-wrap-2">
-                                <h3><a href="#">Multiple Strings Lights</a></h3>
-                                <div class="price-2">
-                                    <span>$ 80.00</span>
-                                </div>
-                            </div>
-                            <div class="pro-wishlist-2">
-                                <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-pane active" id="hm14-tab5">
-                <div class="product-slider-active owl-carousel owl-dot-none">
-                    <div class="product-wrap-2 mb-25">
-                        <div class="product-img">
-                            <a href="#">
-                                <img class="default-img" src="static/picture/hm14-pro-1.jpg" alt="">
-                                <img class="hover-img" src="static/picture/hm14-pro-1.jpg" alt="">
-                            </a>
-                            <span class="red">-10%</span>
-                            <div class="product-action-2 product-action-2-red">
-                                <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-content-2">
-                            <div class="title-price-wrap-2">
-                                <h3><a href="#">Santa Claus Cap</a></h3>
-                                <div class="price-2">
-                                    <span>$ 60.00</span>
-                                    <span class="old red">$ 60.00</span>
-                                </div>
-                            </div>
-                            <div class="pro-wishlist-2">
-                                <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-wrap-2 mb-25">
-                        <div class="product-img">
-                            <a href="#">
-                                <img class="default-img" src="static/picture/hm14-pro-2.jpg" alt="">
-                                <img class="hover-img" src="static/picture/hm14-pro-2.jpg" alt="">
-                            </a>
-                            <span class="purple">New</span>
-                            <div class="product-action-2 product-action-2-red">
-                                <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-content-2">
-                            <div class="title-price-wrap-2">
-                                <h3><a href="#">Fresh Poinsettias</a></h3>
-                                <div class="price-2">
-                                    <span>$ 70.00</span>
-                                </div>
-                            </div>
-                            <div class="pro-wishlist-2">
-                                <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-wrap-2 mb-25">
-                        <div class="product-img">
-                            <a href="#">
-                                <img class="default-img" src="static/picture/hm14-pro-3.jpg" alt="">
-                                <img class="hover-img" src="static/picture/hm14-pro-3.jpg" alt="">
-                            </a>
-                            <span class="red">-10%</span>
-                            <div class="product-action-2 product-action-2-red">
-                                <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-content-2">
-                            <div class="title-price-wrap-2">
-                                <h3><a href="#">Holiday Candle</a></h3>
-                                <div class="price-2">
-                                    <span>$ 40.00</span>
-                                    <span class="old red">$ 50.00</span>
-                                </div>
-                            </div>
-                            <div class="pro-wishlist-2">
-                                <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-wrap-2 mb-25">
-                        <div class="product-img">
-                            <a href="#">
-                                <img class="default-img" src="static/picture/hm14-pro-4.jpg" alt="">
-                                <img class="hover-img" src="static/picture/hm14-pro-4.jpg" alt="">
-                            </a>
-                            <span class="purple">New</span>
-                            <div class="product-action-2 product-action-2-red">
-                                <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-content-2">
-                            <div class="title-price-wrap-2">
-                                <h3><a href="#">Multiple Strings Lights</a></h3>
-                                <div class="price-2">
-                                    <span>$ 80.00</span>
-                                </div>
-                            </div>
-                            <div class="pro-wishlist-2">
-                                <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-wrap-2 mb-25">
-                        <div class="product-img">
-                            <a href="#">
-                                <img class="default-img" src="static/picture/hm14-pro-2.jpg" alt="">
-                                <img class="hover-img" src="static/picture/hm14-pro-2.jpg" alt="">
-                            </a>
-                            <span class="purple">New</span>
-                            <div class="product-action-2 product-action-2-red">
-                                <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-content-2">
-                            <div class="title-price-wrap-2">
-                                <h3><a href="#">Fresh Poinsettias</a></h3>
-                                <div class="price-2">
-                                    <span>$ 80.00</span>
-                                </div>
-                            </div>
-                            <div class="pro-wishlist-2">
-                                <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-pane" id="hm14-tab7">
-                <div class="product-slider-active owl-carousel owl-dot-none">
-                    <div class="product-wrap-2 mb-25">
-                        <div class="product-img">
-                            <a href="#">
-                                <img class="default-img" src="static/picture/hm14-pro-3.jpg" alt="">
-                                <img class="hover-img" src="static/picture/hm14-pro-3.jpg" alt="">
-                            </a>
-                            <span class="red">-10%</span>
-                            <div class="product-action-2 product-action-2-red">
-                                <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-content-2">
-                            <div class="title-price-wrap-2">
-                                <h3><a href="#">Holiday Candle</a></h3>
-                                <div class="price-2">
-                                    <span>$ 60.00</span>
-                                    <span class="old red">$ 60.00</span>
-                                </div>
-                            </div>
-                            <div class="pro-wishlist-2">
-                                <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-wrap-2 mb-25">
-                        <div class="product-img">
-                            <a href="#">
-                                <img class="default-img" src="static/picture/hm14-pro-1.jpg" alt="">
-                                <img class="hover-img" src="static/picture/hm14-pro-1.jpg" alt="">
-                            </a>
-                            <span class="purple">New</span>
-                            <div class="product-action-2 product-action-2-red">
-                                <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-content-2">
-                            <div class="title-price-wrap-2">
-                                <h3><a href="#">Santa Claus Cap</a></h3>
-                                <div class="price-2">
-                                    <span>$ 70.00</span>
-                                </div>
-                            </div>
-                            <div class="pro-wishlist-2">
-                                <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-wrap-2 mb-25">
-                        <div class="product-img">
-                            <a href="#">
-                                <img class="default-img" src="static/picture/hm14-pro-4.jpg" alt="">
-                                <img class="hover-img" src="static/picture/hm14-pro-4.jpg" alt="">
-                            </a>
-                            <span class="red">-10%</span>
-                            <div class="product-action-2 product-action-2-red">
-                                <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-content-2">
-                            <div class="title-price-wrap-2">
-                                <h3><a href="#">Multiple Strings Lights</a></h3>
-                                <div class="price-2">
-                                    <span>$ 40.00</span>
-                                    <span class="old red">$ 50.00</span>
-                                </div>
-                            </div>
-                            <div class="pro-wishlist-2">
-                                <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-wrap-2 mb-25">
-                        <div class="product-img">
-                            <a href="#">
-                                <img class="default-img" src="static/picture/hm14-pro-2.jpg" alt="">
-                                <img class="hover-img" src="static/picture/hm14-pro-2.jpg" alt="">
-                            </a>
-                            <span class="purple">New</span>
-                            <div class="product-action-2 product-action-2-red">
-                                <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-content-2">
-                            <div class="title-price-wrap-2">
-                                <h3><a href="#">Fresh Poinsettias</a></h3>
-                                <div class="price-2">
-                                    <span>$ 80.00</span>
-                                </div>
-                            </div>
-                            <div class="pro-wishlist-2">
-                                <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-wrap-2 mb-25">
-                        <div class="product-img">
-                            <a href="#">
-                                <img class="default-img" src="static/picture/hm14-pro-1.jpg" alt="">
-                                <img class="hover-img" src="static/picture/hm14-pro-1.jpg" alt="">
-                            </a>
-                            <span class="purple">New</span>
-                            <div class="product-action-2 product-action-2-red">
-                                <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-content-2">
-                            <div class="title-price-wrap-2">
-                                <h3><a href="#">Santa Claus Cap</a></h3>
-                                <div class="price-2">
-                                    <span>$ 80.00</span>
-                                </div>
-                            </div>
-                            <div class="pro-wishlist-2">
-                                <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-pane" id="hm14-tab8">
-                <div class="product-slider-active owl-carousel owl-dot-none">
-                    <div class="product-wrap-2 mb-25">
-                        <div class="product-img">
-                            <a href="#">
-                                <img class="default-img" src="static/picture/hm14-pro-2.jpg" alt="">
-                                <img class="hover-img" src="static/picture/hm14-pro-2.jpg" alt="">
-                            </a>
-                            <span class="red">-10%</span>
-                            <div class="product-action-2 product-action-2-red">
-                                <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-content-2">
-                            <div class="title-price-wrap-2">
-                                <h3><a href="#">Fresh Poinsettias</a></h3>
-                                <div class="price-2">
-                                    <span>$ 60.00</span>
-                                    <span class="old red">$ 60.00</span>
-                                </div>
-                            </div>
-                            <div class="pro-wishlist-2">
-                                <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-wrap-2 mb-25">
-                        <div class="product-img">
-                            <a href="#">
-                                <img class="default-img" src="static/picture/hm14-pro-1.jpg" alt="">
-                                <img class="hover-img" src="static/picture/hm14-pro-1.jpg" alt="">
-                            </a>
-                            <span class="purple">New</span>
-                            <div class="product-action-2 product-action-2-red">
-                                <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-content-2">
-                            <div class="title-price-wrap-2">
-                                <h3><a href="#">Santa Claus Cap</a></h3>
-                                <div class="price-2">
-                                    <span>$ 70.00</span>
-                                </div>
-                            </div>
-                            <div class="pro-wishlist-2">
-                                <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-wrap-2 mb-25">
-                        <div class="product-img">
-                            <a href="#">
-                                <img class="default-img" src="static/picture/hm14-pro-4.jpg" alt="">
-                                <img class="hover-img" src="static/picture/hm14-pro-4.jpg" alt="">
-                            </a>
-                            <span class="red">-10%</span>
-                            <div class="product-action-2 product-action-2-red">
-                                <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-content-2">
-                            <div class="title-price-wrap-2">
-                                <h3><a href="#">Multiple Strings Lights</a></h3>
-                                <div class="price-2">
-                                    <span>$ 40.00</span>
-                                    <span class="old red">$ 50.00</span>
-                                </div>
-                            </div>
-                            <div class="pro-wishlist-2">
-                                <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-wrap-2 mb-25">
-                        <div class="product-img">
-                            <a href="#">
-                                <img class="default-img" src="static/picture/hm14-pro-3.jpg" alt="">
-                                <img class="hover-img" src="static/picture/hm14-pro-3.jpg" alt="">
-                            </a>
-                            <span class="purple">New</span>
-                            <div class="product-action-2 product-action-2-red">
-                                <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-content-2">
-                            <div class="title-price-wrap-2">
-                                <h3><a href="#">Holiday Candle</a></h3>
-                                <div class="price-2">
-                                    <span>$ 80.00</span>
-                                </div>
-                            </div>
-                            <div class="pro-wishlist-2">
-                                <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-wrap-2 mb-25">
-                        <div class="product-img">
-                            <a href="#">
-                                <img class="default-img" src="static/picture/hm14-pro-2.jpg" alt="">
-                                <img class="hover-img" src="static/picture/hm14-pro-2.jpg" alt="">
-                            </a>
-                            <span class="purple">New</span>
-                            <div class="product-action-2 product-action-2-red">
-                                <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-content-2">
-                            <div class="title-price-wrap-2">
-                                <h3><a href="#">Fresh Poinsettias</a></h3>
-                                <div class="price-2">
-                                    <span>$ 80.00</span>
-                                </div>
-                            </div>
-                            <div class="pro-wishlist-2">
-                                <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
-                            </div>
+                <div class="col-lg-4 col-md-4">
+                    <div class="single-banner banner-red-color mb-30">
+                        <a href="#tm-section-3"><img src="static/picture/banner-20.png" alt=""></a>
+                        <div class="banner-content">
+                            <h3>安心购</h3>
+                            <h4>DAN智云线上商城<span>官方质保</span></h4>
+                            <a href="#tm-section-3"><i class="fa fa-long-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="bg-png-1">
-        <img class="wow fadeInLeft" src="static/picture/section-bg-1.png" alt="">
-    </div>
-</div>
-<div class="subscribe-area-3 pt-100 pb-100">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xl-5 col-lg-7 col-md-10 ms-auto me-auto">
-                <div class="subscribe-style-3 text-center">
-                    <h2>Subscribe </h2>
-                    <p>Subscribe to our newsletter to receive news on update</p>
-                    <div id="mc_embed_signup" class="subscribe-form-3 mt-35">
-                        <form id="mc-embedded-subscribe-form" class="validate" novalidate="" target="_blank" name="mc-embedded-subscribe-form" method="post" action="#">
-                            <div id="mc_embed_signup_scroll" class="mc-form">
-                                <input class="email" type="email" required="" placeholder="Your Email Address" name="EMAIL" value="">
-                                <div class="mc-news" aria-hidden="true">
-                                    <input type="text" value="" tabindex="-1" name="b_6bbb9b6f5827bd842d9640c82_05d85f18ef">
-                                </div>
-                                <div class="clear-3 red-subscribe">
-                                    <input id="mc-embedded-subscribe" class="button" type="submit" name="subscribe" value="Subscribe">
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<footer class="footer-area pt-80 pb-25" style="background-image:url(static/images/bg-3.jpg);">
-    <div class="footer-top text-center">
+    <div class="product-area pb-120 bg-gray-5 pt-120" id="tm-section-3">
         <div class="container">
-            <div class="footer-logo">
-                <a href="index.html">
-                    <img alt="" src="static/picture/logo-2.png">
-                </a>
+            <div class="product-top-bar section-border mb-60">
+                <div class="section-title-4">
+                    <h3 class="bg-gray-5">最新产品</h3>
+                </div>
+                <div class="product-tab-list-3 nav bg-gray-5">
+                    <a class="active" data-bs-toggle="tab" href="#hm14-tab2">
+                        <h4>全部</h4>
+                    </a>
+                    <a data-bs-toggle="tab" href="#hm14-tab1">
+                        <h4>前端</h4>
+                    </a>
+                    <a data-bs-toggle="tab" href="#hm14-tab3">
+                        <h4>Windows</h4>
+                    </a>
+                    <a data-bs-toggle="tab" href="#hm14-tab4">
+                        <h4>Android</h4>
+                    </a>
+                </div>
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim</p>
-            <div class="footer-social footer-social-white">
-                <ul>
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                    <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="footer-bottom text-center">
-        <div class="container">
-            <div class="copyright-2 copyright-white-border">
-                <p>Copyright &copy; 2021.Company name All rights reserved.<a target="_blank" href="https://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
-            </div>
-        </div>
-    </div>
-</footer>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-5 col-sm-12 col-xs-12">
-                        <div class="tab-content quickview-big-img">
-                            <div id="pro-1" class="tab-pane fade show active">
-                                <img src="static/picture/quickview-l1.jpg" alt="">
-                            </div>
-                            <div id="pro-2" class="tab-pane fade">
-                                <img src="static/picture/quickview-l2.jpg" alt="">
-                            </div>
-                            <div id="pro-3" class="tab-pane fade">
-                                <img src="static/picture/quickview-l3.jpg" alt="">
-                            </div>
-                            <div id="pro-4" class="tab-pane fade">
-                                <img src="static/picture/quickview-l2.jpg" alt="">
-                            </div>
-                        </div>
-                        <!-- Thumbnail Large Image End -->
-                        <!-- Thumbnail Image End -->
-                        <div class="quickview-wrap mt-15">
-                            <div class="quickview-slide-active owl-carousel nav nav-style-1" role="tablist">
-                                <a class="active" data-bs-toggle="tab" href="#pro-1"><img src="static/picture/quickview-s1.jpg" alt=""></a>
-                                <a data-bs-toggle="tab" href="#pro-2"><img src="static/picture/quickview-s2.jpg" alt=""></a>
-                                <a data-bs-toggle="tab" href="#pro-3"><img src="static/picture/quickview-s3.jpg" alt=""></a>
-                                <a data-bs-toggle="tab" href="#pro-4"><img src="static/picture/quickview-s2.jpg" alt=""></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-7 col-sm-12 col-xs-12">
-                        <div class="product-details-content quickview-content">
-                            <h2>Products Name Here</h2>
-                            <div class="product-details-price">
-                                <span>$18.00 </span>
-                                <span class="old">$20.00 </span>
-                            </div>
-                            <div class="pro-details-rating-wrap">
-                                <div class="pro-details-rating">
-                                    <i class="fa fa-star-o yellow"></i>
-                                    <i class="fa fa-star-o yellow"></i>
-                                    <i class="fa fa-star-o yellow"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
+            <div class="tab-content jump">
+                <div class="tab-pane" id="hm14-tab1">
+                    <div class="product-slider-active owl-carousel owl-dot-none">
+                        <div class="product-wrap-2 mb-25">
+                            <div class="product-img">
+                                <a href="#">
+                                    <img class="default-img" src="static/picture/hm14-pro-4.jpg" alt="">
+                                    <img class="hover-img" src="static/picture/hm14-pro-4.jpg" alt="">
+                                </a>
+                                <span class="red">-10%</span>
+                                <div class="product-action-2 product-action-2-red">
+                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
+                                    <a title="Quick View" href="#" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
+                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
                                 </div>
-                                <span>3 Reviews</span>
                             </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisic elit eiusm tempor incidid ut labore et dolore magna aliqua. Ut enim ad minim venialo quis nostrud exercitation ullamco</p>
-                            <div class="pro-details-list">
-                                <ul>
-                                    <li>- 0.5 mm Dail</li>
-                                    <li>- Inspired vector icons</li>
-                                    <li>- Very modern style  </li>
-                                </ul>
-                            </div>
-                            <div class="pro-details-size-color">
-                                <div class="pro-details-color-wrap">
-                                    <span>Color</span>
-                                    <div class="pro-details-color-content">
-                                        <ul>
-                                            <li class="blue"></li>
-                                            <li class="maroon active"></li>
-                                            <li class="gray"></li>
-                                            <li class="green"></li>
-                                            <li class="yellow"></li>
-                                            <li class="white"></li>
-                                        </ul>
+                            <div class="product-content-2">
+                                <div class="title-price-wrap-2">
+                                    <h3><a href="#">云云浏览器</a></h3>
+                                    <div class="price-2">
+                                        <span>￥30.00</span>
+                                        <span class="old red">￥50.00</span>
                                     </div>
                                 </div>
-                                <div class="pro-details-size">
-                                    <span>Size</span>
-                                    <div class="pro-details-size-content">
-                                        <ul>
-                                            <li><a href="#">s</a></li>
-                                            <li><a href="#">m</a></li>
-                                            <li><a href="#">l</a></li>
-                                            <li><a href="#">xl</a></li>
-                                            <li><a href="#">xxl</a></li>
-                                        </ul>
+                                <div class="pro-wishlist-2">
+                                    <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-wrap-2 mb-25">
+                            <div class="product-img">
+                                <a href="#">
+                                    <img class="default-img" src="static/picture/hm14-pro-3.jpg" alt="">
+                                    <img class="hover-img" src="static/picture/hm14-pro-3.jpg" alt="">
+                                </a>
+                                <span class="purple">New</span>
+                                <div class="product-action-2 product-action-2-red">
+                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
+                                    <a title="Quick View" href="#" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
+                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-content-2">
+                                <div class="title-price-wrap-2">
+                                    <h3><a href="#">前端小网页</a></h3>
+                                    <div class="price-2">
+                                        <span>￥10.00</span>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="pro-details-quality">
-                                <div class="cart-plus-minus">
-                                    <input class="cart-plus-minus-box" type="text" name="qtybutton" value="2">
-                                </div>
-                                <div class="pro-details-cart btn-hover">
-                                    <a href="#">Add To Cart</a>
-                                </div>
-                                <div class="pro-details-wishlist">
-                                    <a href="#"><i class="fa fa-heart-o"></i></a>
-                                </div>
-                                <div class="pro-details-compare">
-                                    <a href="#"><i class="pe-7s-shuffle"></i></a>
+                                <div class="pro-wishlist-2">
+                                    <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
                                 </div>
                             </div>
-                            <div class="pro-details-meta">
-                                <span>Categories :</span>
-                                <ul>
-                                    <li><a href="#">Minimal,</a></li>
-                                    <li><a href="#">Furniture,</a></li>
-                                    <li><a href="#">Fashion</a></li>
-                                </ul>
+                        </div>
+                        <div class="product-wrap-2 mb-25">
+                            <div class="product-img">
+                                <a href="#">
+                                    <img class="default-img" src="static/picture/hm14-pro-1.jpg" alt="">
+                                    <img class="hover-img" src="static/picture/hm14-pro-1.jpg" alt="">
+                                </a>
+                                <span class="red">-10%</span>
+                                <div class="product-action-2 product-action-2-red">
+                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
+                                    <a title="Quick View" href="#" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
+                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
+                                </div>
                             </div>
-                            <div class="pro-details-meta">
-                                <span>Tag :</span>
-                                <ul>
-                                    <li><a href="#">Fashion, </a></li>
-                                    <li><a href="#">Furniture,</a></li>
-                                    <li><a href="#">Electronic</a></li>
-                                </ul>
+                            <div class="product-content-2">
+                                <div class="title-price-wrap-2">
+                                    <h3><a href="https://dansmartcloud.github.io/home">DAN智云-轻主页</a></h3>
+                                    <div class="price-2">
+                                        <span>免费</span>
+                                    </div>
+                                </div>
+                                <div class="pro-wishlist-2">
+                                    <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
+                                </div>
                             </div>
-                            <div class="pro-details-social">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                </ul>
+                        </div>
+                        <div class="product-wrap-2 mb-25">
+                            <div class="product-img">
+                                <a href="#">
+                                    <img class="default-img" src="static/picture/hm14-pro-2.jpg" alt="">
+                                    <img class="hover-img" src="static/picture/hm14-pro-2.jpg" alt="">
+                                </a>
+                                <span class="purple">New</span>
+                                <div class="product-action-2 product-action-2-red">
+                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
+                                    <a title="Quick View" href="#" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
+                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-content-2">
+                                <div class="title-price-wrap-2">
+                                    <h3><a href="#">前端网站</a></h3>
+                                    <div class="price-2">
+                                        <span>￥100.00</span>
+                                    </div>
+                                </div>
+                                <div class="pro-wishlist-2">
+                                    <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-wrap-2 mb-25">
+                            <div class="product-img">
+                                <a href="#">
+                                    <img class="default-img" src="static/picture/hm14-pro-4.jpg" alt="">
+                                    <img class="hover-img" src="static/picture/hm14-pro-4.jpg" alt="">
+                                </a>
+                                <span class="purple">New</span>
+                                <div class="product-action-2 product-action-2-red">
+                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
+                                    <a title="Quick View" href="#" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
+                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-content-2">
+                                <div class="title-price-wrap-2">
+                                    <h3><a href="#">前端响应式活动页</a></h3>
+                                    <div class="price-2">
+                                        <span>￥100.00</span>
+                                    </div>
+                                </div>
+                                <div class="pro-wishlist-2">
+                                    <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pro-view-more text-center">
+                        <a href="#"><i class="fa fa-refresh"></i> View More</a>
+                    </div>
+                </div>
+                <div class="tab-pane active" id="hm14-tab2">
+                    <div class="product-slider-active owl-carousel owl-dot-none">
+                        <div class="product-wrap-2 mb-25">
+                            <div class="product-img">
+                                <a href="#">
+                                    <img class="default-img" src="static/picture/hm14-pro-1.jpg" alt="">
+                                    <img class="hover-img" src="static/picture/hm14-pro-1.jpg" alt="">
+                                </a>
+                                <span class="red">-10%</span>
+                                <div class="product-action-2 product-action-2-red">
+                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
+                                    <a title="Quick View" href="#" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
+                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-content-2">
+                                <div class="title-price-wrap-2">
+                                    <h3><a href="#">云云桌面</a></h3>
+                                    <div class="price-2">
+                                        <span>￥50.00</span>
+                                        <span class="old red">￥80.00</span>
+                                    </div>
+                                </div>
+                                <div class="pro-wishlist-2">
+                                    <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-wrap-2 mb-25">
+                            <div class="product-img">
+                                <a href="#">
+                                    <img class="default-img" src="static/picture/hm14-pro-2.jpg" alt="">
+                                    <img class="hover-img" src="static/picture/hm14-pro-2.jpg" alt="">
+                                </a>
+                                <span class="purple">New</span>
+                                <div class="product-action-2 product-action-2-red">
+                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
+                                    <a title="Quick View" href="#" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
+                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-content-2">
+                                <div class="title-price-wrap-2">
+                                    <h3><a href="#">云云浏览器Windows版与抢鲜版</a></h3>
+                                    <div class="price-2">
+                                        <span>￥40.00</span>
+                                        <span class="old red">￥50.00</span>
+                                    </div>
+                                </div>
+                                <div class="pro-wishlist-2">
+                                    <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-wrap-2 mb-25">
+                            <div class="product-img">
+                                <a href="#">
+                                    <img class="default-img" src="static/picture/hm14-pro-3.jpg" alt="">
+                                    <img class="hover-img" src="static/picture/hm14-pro-3.jpg" alt="">
+                                </a>
+                                <span class="red">-10%</span>
+                                <div class="product-action-2 product-action-2-red">
+                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
+                                    <a title="Quick View" href="#" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
+                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-content-2">
+                                <div class="title-price-wrap-2">
+                                    <h3><a href="#">Adriton OS</a></h3>
+                                    <div class="price-2">
+                                        <span>$ 40.00</span>
+                                        <span class="old red">$ 50.00</span>
+                                    </div>
+                                </div>
+                                <div class="pro-wishlist-2">
+                                    <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-wrap-2 mb-25">
+                            <div class="product-img">
+                                <a href="#">
+                                    <img class="default-img" src="static/picture/hm14-pro-4.jpg" alt="">
+                                    <img class="hover-img" src="static/picture/hm14-pro-4.jpg" alt="">
+                                </a>
+                                <span class="purple">New</span>
+                                <div class="product-action-2 product-action-2-red">
+                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
+                                    <a title="Quick View" href="#" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
+                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-content-2">
+                                <div class="title-price-wrap-2">
+                                    <h3><a href="#">岸汀Anteen操作系统</a></h3>
+                                    <div class="price-2">
+                                        <span>￥80.00</span>
+                                    </div>
+                                </div>
+                                <div class="pro-wishlist-2">
+                                    <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-wrap-2 mb-25">
+                            <div class="product-img">
+                                <a href="#">
+                                    <img class="default-img" src="static/picture/hm14-pro-2.jpg" alt="">
+                                    <img class="hover-img" src="static/picture/hm14-pro-2.jpg" alt="">
+                                </a>
+                                <span class="purple">New</span>
+                                <div class="product-action-2 product-action-2-red">
+                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
+                                    <a title="Quick View" href="#" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
+                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-content-2">
+                                <div class="title-price-wrap-2">
+                                    <h3><a href="#">云云频谱</a></h3>
+                                    <div class="price-2">
+                                        <span>￥30.00</span>
+                                    </div>
+                                </div>
+                                <div class="pro-wishlist-2">
+                                    <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pro-view-more text-center">
+                        <a href="https://github.com/DANSmartCloud/DANSC/discussions/1"><i class="fa fa-refresh"></i> 获取帮助</a>
+                    </div>
+                </div>
+                <div class="tab-pane" id="hm14-tab3">
+                    <div class="product-slider-active owl-carousel owl-dot-none">
+                        <div class="product-wrap-2 mb-25">
+                            <div class="product-img">
+                                <a href="#">
+                                    <img class="default-img" src="static/picture/hm14-pro-3.jpg" alt="">
+                                    <img class="hover-img" src="static/picture/hm14-pro-3.jpg" alt="">
+                                </a>
+                                <span class="red">-10%</span>
+                                <div class="product-action-2 product-action-2-red">
+                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
+                                    <a title="Quick View" href="#" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
+                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-content-2">
+                                <div class="title-price-wrap-2">
+                                    <h3><a href="#">云云桌面</a></h3>
+                                    <div class="price-2">
+                                        <span>￥50.00</span>
+                                        <span class="old red">￥80.00</span>
+                                    </div>
+                                </div>
+                                <div class="pro-wishlist-2">
+                                    <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-wrap-2 mb-25">
+                            <div class="product-img">
+                                <a href="#">
+                                    <img class="default-img" src="static/picture/hm14-pro-1.jpg" alt="">
+                                    <img class="hover-img" src="static/picture/hm14-pro-1.jpg" alt="">
+                                </a>
+                                <span class="purple">New</span>
+                                <div class="product-action-2 product-action-2-red">
+                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
+                                    <a title="Quick View" href="#" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
+                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-content-2">
+                                <div class="title-price-wrap-2">
+                                    <h3><a href="#">云云频谱</a></h3>
+                                    <div class="price-2">
+                                        <span>￥30.00</span>
+                                    </div>
+                                </div>
+                                <div class="pro-wishlist-2">
+                                    <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-wrap-2 mb-25">
+                            <div class="product-img">
+                                <a href="#">
+                                    <img class="default-img" src="static/picture/hm14-pro-4.jpg" alt="">
+                                    <img class="hover-img" src="static/picture/hm14-pro-4.jpg" alt="">
+                                </a>
+                                <span class="red">-10%</span>
+                                <div class="product-action-2 product-action-2-red">
+                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
+                                    <a title="Quick View" href="#" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
+                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-content-2">
+                                <div class="title-price-wrap-2">
+                                    <h3><a href="#">云云浏览器Windows版与抢鲜版</a></h3>
+                                    <div class="price-2">
+                                        <span>￥40.00</span>
+                                        <span class="old red">￥50.00</span>
+                                    </div>
+                                </div>
+                                <div class="pro-wishlist-2">
+                                    <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-wrap-2 mb-25">
+                            <div class="product-img">
+                                <a href="#">
+                                    <img class="default-img" src="static/picture/hm14-pro-2.jpg" alt="">
+                                    <img class="hover-img" src="static/picture/hm14-pro-2.jpg" alt="">
+                                </a>
+                                <span class="purple">New</span>
+                                <div class="product-action-2 product-action-2-red">
+                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
+                                    <a title="Quick View" href="#" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
+                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-content-2">
+                                <div class="title-price-wrap-2">
+                                    <h3><a href="#">岸汀Anteen操作系统</a></h3>
+                                    <div class="price-2">
+                                        <span>￥80.00</span>
+                                    </div>
+                                </div>
+                                <div class="pro-wishlist-2">
+                                    <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-wrap-2 mb-25">
+                            <div class="product-img">
+                                <a href="#">
+                                    <img class="default-img" src="static/picture/hm14-pro-1.jpg" alt="">
+                                    <img class="hover-img" src="static/picture/hm14-pro-1.jpg" alt="">
+                                </a>
+                                <span class="purple">New</span>
+                                <div class="product-action-2 product-action-2-red">
+                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
+                                    <a title="Quick View" href="#" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
+                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-content-2">
+                                <div class="title-price-wrap-2">
+                                    <h3><a href="#">纯净软件安装包及实用资源库</a></h3>
+                                    <div class="price-2">
+                                        <span>￥80.00</span>
+                                    </div>
+                                </div>
+                                <div class="pro-wishlist-2">
+                                    <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pro-view-more text-center">
+                        <a href="https://github.com/DANSmartCloud/DANSC/discussions/1"><i class="fa fa-refresh"></i> 获取帮助</a>
+                    </div>
+                </div>
+                <div class="tab-pane" id="hm14-tab4">
+                    <div class="product-slider-active owl-carousel owl-dot-none">
+                        <div class="product-wrap-2 mb-25">
+                            <div class="product-img">
+                                <a href="#">
+                                    <img class="default-img" src="static/picture/hm14-pro-2.jpg" alt="">
+                                    <img class="hover-img" src="static/picture/hm14-pro-2.jpg" alt="">
+                                </a>
+                                <span class="red">-10%</span>
+                                <div class="product-action-2 product-action-2-red">
+                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
+                                    <a title="Quick View" href="#" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
+                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-content-2">
+                                <div class="title-price-wrap-2">
+                                    <h3><a href="#">云云浏览器Android体验版</a></h3>
+                                    <div class="price-2">
+                                        <span>￥10.00</span>
+                                        <span class="old red">￥20.00</span>
+                                    </div>
+                                </div>
+                                <div class="pro-wishlist-2">
+                                    <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-wrap-2 mb-25">
+                            <div class="product-img">
+                                <a href="#">
+                                    <img class="default-img" src="static/picture/hm14-pro-1.jpg" alt="">
+                                    <img class="hover-img" src="static/picture/hm14-pro-1.jpg" alt="">
+                                </a>
+                                <span class="purple">New</span>
+                                <div class="product-action-2 product-action-2-red">
+                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
+                                    <a title="Quick View" href="https://dansmartcloud.github.io/home" data-bs-toggle="modal"
+                                        data-bs-target="https://dansmartcloud.github.io/home"><i class="fa fa-eye"></i></a>
+                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-content-2">
+                                <div class="title-price-wrap-2">
+                                    <h3><a href="https://dansmartcloud.github.io/home">DAN智云-轻主页</a></h3>
+                                    <div class="price-2">
+                                        <span>免费</span>
+                                    </div>
+                                </div>
+                                <div class="pro-wishlist-2">
+                                    <a title="Wishlist" href="https://dansmartcloud.github.io/home"><i class="fa fa-heart-o"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-wrap-2 mb-25">
+                            <div class="product-img">
+                                <a href="#">
+                                    <img class="default-img" src="static/picture/hm14-pro-4.jpg" alt="">
+                                    <img class="hover-img" src="static/picture/hm14-pro-4.jpg" alt="">
+                                </a>
+                                <span class="red">Pro</span>
+                                <div class="product-action-2 product-action-2-red">
+                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
+                                    <a title="Quick View" href="#" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
+                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-content-2">
+                                <div class="title-price-wrap-2">
+                                    <h3><a href="#">全套办公计划</a></h3>
+                                    <div class="price-2">
+                                        <span>￥365.00</span>
+                                    </div>
+                                </div>
+                                <div class="pro-wishlist-2">
+                                    <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-wrap-2 mb-25">
+                            <div class="product-img">
+                                <a href="#">
+                                    <img class="default-img" src="static/picture/hm14-pro-3.jpg" alt="">
+                                    <img class="hover-img" src="static/picture/hm14-pro-3.jpg" alt="">
+                                </a>
+                                <span class="purple">New</span>
+                                <div class="product-action-2 product-action-2-red">
+                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
+                                    <a title="Quick View" href="#" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
+                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-content-2">
+                                <div class="title-price-wrap-2">
+                                    <h3><a href="#">其它服务</a></h3>
+                                    <div class="price-2">
+                                        <span>不定价</span>
+                                    </div>
+                                </div>
+                                <div class="pro-wishlist-2">
+                                    <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-wrap-2 mb-25">
+                            <div class="product-img">
+                                <a href="#">
+                                    <img class="default-img" src="static/picture/hm14-pro-2.jpg" alt="">
+                                    <img class="hover-img" src="static/picture/hm14-pro-2.jpg" alt="">
+                                </a>
+                                <span class="purple">New</span>
+                                <div class="product-action-2 product-action-2-red">
+                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
+                                    <a title="Quick View" href="#" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
+                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-content-2">
+                                <div class="title-price-wrap-2">
+                                    <h3><a href="#">疑难问题与优化</a></h3>
+                                    <div class="price-2">
+                                        <span>不定价</span>
+                                    </div>
+                                </div>
+                                <div class="pro-wishlist-2">
+                                    <a title="Wishlist" href="#"><i class="fa fa-heart-o"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pro-view-more text-center">
+                        <a href="https://github.com/DANSmartCloud/DANSC/discussions/1"><i class="fa fa-refresh"></i> 获取帮助</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-png-1">
+            <img class="wow fadeInLeft" src="static/picture/section-bg-1.png" alt="">
+        </div>
+    </div>
+    <div class="funfact-area pt-110 pb-120">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-6">
+                    <div class="gift-img">
+                        <a href="#"><img class="wow fadeInLeft" src="static/picture/deal-hm14.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="funfact-content funfact-res mt-90 text-center">
+                        <h1>DAN智云给您拜年啦！</h2>
+                        <div class="timer">
+                            <h1 class="heading" data-aos="fade-up">
+                                <div id="datetime">
+                                <script>
+                                    setInterval("document.getElementById('datetime').innerHTML=new Date().toLocaleString();", 1000);
+                                </script>
+                            </div>
+                            </h1>
+                        </div>
+                        <div class="funfact-btn funfact-btn-red btn-hover">
+                            <a href="https://github.com/DANSmartCloud/DANSC/discussions/1">访问官方论坛</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-png-2">
+            <img class="wow fadeInRight" src="static/picture/section-bg-1.png" alt="">
+        </div>
+    </div>
+    <div id="tm-section-5" class="testimonial-area bg-img mt-195" style="background-image:url(static/images/bg-2.jpg);">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-7">
+                    <div class="testimonial-active-2 owl-carousel owl-dot-none">
+                        <div class="single-testimonial-2 text-center" name="#tm-section-5">
+                            <p>我们是一个优秀的团队，我们是DAN智云工作室的成员。我们在2015年开始走在一起，一起学习、工作、开发……</p>
+                            <div class="client-info">
+                                <i class="fa fa-map-signs"></i>
+                                <h5>如今，我们迎来了我们团队成立的第八年，让我们一起保持热爱，奔赴山海。</h5>
+                                <span>DAN智云</span>
+                            </div>
+                        </div>
+                        <div class="single-testimonial-2 text-center">
+                            <p>我们的平均年龄不到18岁，但是我们却凭借我们的双手创造了一个个伟大的奇迹。</p>
+                            <div class="client-info">
+                                <i class="fa fa-map-signs"></i>
+                                <h5>如今，让我们携手向前，走向辉煌的明天！</h5>
+                                <span>DAN智云</span>
+                            </div>
+                        </div>
+                        <div class="single-testimonial-2 text-center">
+                            <p>我们热爱技术研究，我们是一群优秀的创客，我们爱国爱党爱人民，我们热心为社会贡献力量。</p>
+                            <div class="client-info">
+                                <i class="fa fa-map-signs"></i>
+                                <h5>新的一年，让我们一起为社会公益做出更多贡献！</h5>
+                                <span>DAN智云</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-5">
+                    <div class="testimonial-img-2">
+                        <img class="wow fadeInUp" src="static/picture/testi-2.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <iframe width="100%" id="tm-section-4" height="200%" src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAATF_KMVUNjA4Q0RNOVdUQkZGN0VLMThJQ0E0N0dVUy4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100000vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
+</div>
+    </div>
+    <footer class="footer-area pt-80 pb-25" style="background-image:url(static/images/bg-3.jpg);">
+        <div class="footer-top text-center">
+            <div class="container">
+                <div class="footer-logo">
+                    <a href="https://dansmartcloud.github.io">
+                        <img alt="" src="static/picture/logo-2.png">
+                    </a>
+                </div>
+                <p>本活动最终解释权归DAN智云所有</p>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <div class="container">
+                <div class="copyright-2 copyright-white-border">
+                    <p>Copyright &copy; 2023.DAN智云Studio.All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-5 col-sm-12 col-xs-12">
+                            <div class="tab-content quickview-big-img">
+                                <div id="pro-1" class="tab-pane fade show active">
+                                    <img src="static/picture/quickview-l1.jpg" alt="">
+                                </div>
+                                <div id="pro-2" class="tab-pane fade">
+                                    <img src="static/picture/quickview-l2.jpg" alt="">
+                                </div>
+                                <div id="pro-3" class="tab-pane fade">
+                                    <img src="static/picture/quickview-l3.jpg" alt="">
+                                </div>
+                                <div id="pro-4" class="tab-pane fade">
+                                    <img src="static/picture/quickview-l2.jpg" alt="">
+                                </div>
+                            </div>
+                            <!-- Thumbnail Large Image End -->
+                            <!-- Thumbnail Image End -->
+                            <div class="quickview-wrap mt-15">
+                                <div class="quickview-slide-active owl-carousel nav nav-style-1" role="tablist">
+                                    <a class="active" data-bs-toggle="tab" href="#pro-1"><img
+                                            src="static/picture/quickview-s1.jpg" alt=""></a>
+                                    <a data-bs-toggle="tab" href="#pro-2"><img src="static/picture/quickview-s2.jpg"
+                                            alt=""></a>
+                                    <a data-bs-toggle="tab" href="#pro-3"><img src="static/picture/quickview-s3.jpg"
+                                            alt=""></a>
+                                    <a data-bs-toggle="tab" href="#pro-4"><img src="static/picture/quickview-s2.jpg"
+                                            alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7 col-sm-12 col-xs-12">
+                            <div class="product-details-content quickview-content">
+                                <h2>请联系DAN智云官方客服</h2>
+                                <div class="product-details-price">
+                                    <span>八折优惠</span>
+                                    <span class="old">九折优惠</span>
+                                </div>
+                                <div class="pro-details-rating-wrap">
+                                    <div class="pro-details-rating">
+                                        <i class="fa fa-star-o yellow"></i>
+                                        <i class="fa fa-star-o yellow"></i>
+                                        <i class="fa fa-star-o yellow"></i>
+                                        <i class="fa fa-star-o yellow"></i>
+                                        <i class="fa fa-star-o yellow"></i>
+                                    </div>
+                                    <span>已经有39478人完成购买</span>
+                                </div>
+                                <p>立即购买您想要购买的产品，获取最优质的客服与产品体验！
+                                </p>
+                                <div class="pro-details-list">
+                                    <ul>
+                                        <li>- 最优质的客服</li>
+                                        <li>- 最快速的响应</li>
+                                        <li>- 最大力的福利</li>
+                                    </ul>
+                                </div>
+                                <div class="pro-details-quality">
+                                    <div class="cart-plus-minus">
+                                        <input class="cart-plus-minus-box" type="text" name="qtybutton" value="1">
+                                    </div>
+                                    <div class="pro-details-cart btn-hover">
+                                        <a href="mailto:dansmartcloud2020@outlook.com">立即联系</a>
+                                    </div>
+                                </div>
+                                <div class="pro-details-meta">
+                                    <span>*</span>
+                                    <ul>
+                                        <li><a href="#">商品图片仅供参考，以实物为准。</a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1560,8 +903,7 @@
             </div>
         </div>
     </div>
-</div>
-<!-- Modal end -->
+    <!-- Modal end -->
 
 
 
@@ -1571,19 +913,148 @@
 
 
 
-<!-- All JS is here
+    <!-- All JS is here
 ============================================ -->
 
-<script src="static/js/modernizr-3.11.7.min.js"></script>
-<script src="static/js/jquery-v3.6.0.min.js"></script>
-<script src="static/js/jquery-migrate-v3.3.2.min.js"></script>
-<script src="static/js/popper.min.js"></script>
-<script src="static/js/bootstrap.min.js"></script>
-<script src="static/js/plugins.js"></script>
-<!-- Ajax Mail -->
-<script src="static/js/ajax-mail.js"></script>
-<!-- Main JS -->
-<script src="static/js/main.js"></script>
+    <script src="static/js/modernizr-3.11.7.min.js"></script>
+    <script src="static/js/jquery-v3.6.0.min.js"></script>
+    <script src="static/js/jquery-migrate-v3.3.2.min.js"></script>
+    <script src="static/js/popper.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/plugins.js"></script>
+    <!-- Ajax Mail -->
+    <script src="static/js/ajax-mail.js"></script>
+    <!-- Main JS -->
+    <script src="static/js/main.js"></script>
+    <script src="js/fireworks.js"></script>
+    <script>
+        (function fairyDustCursor() {
+ 
+            var possibleColors = ["#D61C59", "#E7D84B", "#1B8798"]
+            var width = window.innerWidth;
+            var height = window.innerHeight;
+            var cursor = { x: width / 2, y: width / 2 };
+            var particles = [];
+ 
+            function init() {
+                bindEvents();
+                loop();
+            }
+ 
+            // Bind events that are needed
+            function bindEvents() {
+                document.addEventListener('mousemove', onMouseMove);
+                window.addEventListener('resize', onWindowResize);
+            }
+ 
+            function onWindowResize(e) {
+                width = window.innerWidth;
+                height = window.innerHeight;
+            }
+ 
+            function onMouseMove(e) {
+                cursor.x = e.clientX;
+                cursor.y = e.clientY;
+ 
+                addParticle(cursor.x, cursor.y, possibleColors[Math.floor(Math.random() * possibleColors.length)]);
+            }
+ 
+            function addParticle(x, y, color) {
+                var particle = new Particle();
+                particle.init(x, y, color);
+                particles.push(particle);
+            }
+ 
+            function updateParticles() {
+ 
+                // Updated
+                for (var i = 0; i < particles.length; i++) {
+                    particles[i].update();
+                }
+ 
+                // Remove dead particles
+                for (var i = particles.length - 1; i >= 0; i--) {
+                    if (particles[i].lifeSpan < 0) {
+                        particles[i].die();
+                        particles.splice(i, 1);
+                    }
+                }
+ 
+            }
+ 
+            function loop() {
+                requestAnimationFrame(loop);
+                updateParticles();
+            }
+ 
+            /**
+             * Particles
+             */
+ 
+            function Particle() {
+ 
+                this.character = "*";
+                this.lifeSpan = 120; //ms
+                this.initialStyles = {
+                    "position": "fixed",
+                    "display": "inline-block",
+                    "top": "0px",
+                    "left": "0px",
+                    "pointerEvents": "none",
+                    "touch-action": "none",
+                    "z-index": "10000000",
+                    "fontSize": "25px",
+                    "will-change": "transform"
+                };
+ 
+                // Init, and set properties
+                this.init = function (x, y, color) {
+ 
+                    this.velocity = {
+                        x: (Math.random() < 0.5 ? -1 : 1) * (Math.random() / 2),
+                        y: 1
+                    };
+ 
+                    this.position = { x: x + 10, y: y + 10 };
+                    this.initialStyles.color = color;
+ 
+                    this.element = document.createElement('span');
+                    this.element.innerHTML = this.character;
+                    applyProperties(this.element, this.initialStyles);
+                    this.update();
+ 
+                    document.querySelector('.js-cursor-container').appendChild(this.element);
+                };
+ 
+                this.update = function () {
+                    this.position.x += this.velocity.x;
+                    this.position.y += this.velocity.y;
+                    this.lifeSpan--;
+ 
+                    this.element.style.transform = "translate3d(" + this.position.x + "px," + this.position.y + "px, 0) scale(" + (this.lifeSpan / 120) + ")";
+                }
+ 
+                this.die = function () {
+                    this.element.parentNode.removeChild(this.element);
+                }
+ 
+            }
+ 
+            /**
+             * Utils
+             */
+ 
+            // Applies css `properties` to an element.
+            function applyProperties(target, properties) {
+                for (var key in properties) {
+                    target.style[key] = properties[key];
+                }
+            }
+ 
+            if (!('ontouchstart' in window || navigator.msMaxTouchPoints)) init();
+        })();    
+    </script>
+    
 
 </body>
 
