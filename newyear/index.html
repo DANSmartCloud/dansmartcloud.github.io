@@ -7,6 +7,7 @@
     <title>DAN智云新年线上活动</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="https://dansmartcloud.github.io/next-DANSC/images/html-DANSC-icon.png">
 
     <!-- CSS
 	============================================ -->
@@ -19,7 +20,23 @@
     <link rel="stylesheet" href="static/css/plugins.css">
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="static/css/style.css">
+    <script type="text/javascript">
+        window.onload = function(){
+                 setInterval("toggleSound()",100);
+            }
     
+        function toggleSound() {
+                    var music = document.getElementById("music1");//获取ID  
+                        
+                    if (music.paused) { //判读是否播放  
+                        music.paused=false;
+                        music.play(); //没有就播放 
+                    }    
+            }
+    </script>
+    <audio id="music1" controls="controls" autoplay="autoplay" preload id="music1" hidden>
+        <source src="spring.mp3" />
+        </audio>
 </head>
 
 <body>
@@ -107,21 +124,21 @@
             <div class="row">
                 <div class="col-lg-4 col-md-4">
                     <div class="single-banner banner-red-color mb-30">
-                        <a href="fireworks/index.html"><img src="static/picture/banner-18.png" alt=""></a>
+                        <a target="_blank" href="fireworks/index.html"><img src="static/picture/banner-18.png" alt=""></a>
                         <div class="banner-content">
                             <h3>放烟花</h3>
                             <h4>线上放烟花<span>支持环保</span></h4>
-                            <a href="https://dansmartcloud.github.io/another/htmlfirework.html"><i class="fa fa-long-arrow-right"></i></a>
+                            <a target="_blank" href="https://dansmartcloud.github.io/another/htmlfirework.html"><i class="fa fa-long-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4">
                     <div class="single-banner banner-red-color mb-30">
-                        <a href="https://dansmartcloud.github.io/another/give.html"><img src="static/picture/banner-19.png" alt=""></a>
+                        <a target="_blank" href="https://dansmartcloud.github.io/another/give.html"><img src="static/picture/banner-19.png" alt=""></a>
                         <div class="banner-content">
                             <h3>留言板</h3>
                             <h4>线上新年送祝福<span>兔年吉祥</span></h4>
-                            <a href="https://dansmartcloud.github.io/another/give.html"><i class="fa fa-long-arrow-right"></i></a>
+                            <a href="#tm-section-6"><i class="fa fa-long-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -164,21 +181,21 @@
                     <div class="product-slider-active owl-carousel owl-dot-none">
                         <div class="product-wrap-2 mb-25">
                             <div class="product-img">
-                                <a href="#">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     <img class="default-img" src="static/picture/hm14-pro-4.jpg" alt="">
                                     <img class="hover-img" src="static/picture/hm14-pro-4.jpg" alt="">
                                 </a>
                                 <span class="red">-10%</span>
                                 <div class="product-action-2 product-action-2-red">
-                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a title="Quick View" href="#" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
+                                    <a title="Add To Cart" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-shopping-cart"></i></a>
+                                    <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
+                                    <a title="Compare" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-retweet"></i></a>
+                               
                                 </div>
                             </div>
                             <div class="product-content-2">
                                 <div class="title-price-wrap-2">
-                                    <h3><a href="#">云云浏览器</a></h3>
+                                    <h3><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">云云浏览器</a></h3>
                                     <div class="price-2">
                                         <span>￥30.00</span>
                                         <span class="old red">￥50.00</span>
@@ -191,21 +208,20 @@
                         </div>
                         <div class="product-wrap-2 mb-25">
                             <div class="product-img">
-                                <a href="#">
+                                <a href<a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"></a>="#">
                                     <img class="default-img" src="static/picture/hm14-pro-3.jpg" alt="">
                                     <img class="hover-img" src="static/picture/hm14-pro-3.jpg" alt="">
                                 </a>
                                 <span class="purple">New</span>
                                 <div class="product-action-2 product-action-2-red">
-                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a title="Quick View" href="#" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
+                                    <a title="Add To Cart" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-shopping-cart"></i></a>
+                                    <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
+                                    <a title="Compare" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-retweet"></i></a>
                                 </div>
                             </div>
                             <div class="product-content-2">
                                 <div class="title-price-wrap-2">
-                                    <h3><a href="#">前端小网页</a></h3>
+                                    <h3><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">前端小网页</a></h3>
                                     <div class="price-2">
                                         <span>￥10.00</span>
                                     </div>
@@ -217,16 +233,16 @@
                         </div>
                         <div class="product-wrap-2 mb-25">
                             <div class="product-img">
-                                <a href="#">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     <img class="default-img" src="static/picture/hm14-pro-1.jpg" alt="">
                                     <img class="hover-img" src="static/picture/hm14-pro-1.jpg" alt="">
                                 </a>
                                 <span class="red">-10%</span>
                                 <div class="product-action-2 product-action-2-red">
-                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a title="Quick View" href="#" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
+                                    <a title="Add To Cart" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-shopping-cart"></i></a>
+                                    <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
+                                    <a title="Compare" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-retweet"></i></a>
+                               
                                 </div>
                             </div>
                             <div class="product-content-2">
@@ -243,21 +259,21 @@
                         </div>
                         <div class="product-wrap-2 mb-25">
                             <div class="product-img">
-                                <a href="#">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     <img class="default-img" src="static/picture/hm14-pro-2.jpg" alt="">
                                     <img class="hover-img" src="static/picture/hm14-pro-2.jpg" alt="">
                                 </a>
                                 <span class="purple">New</span>
                                 <div class="product-action-2 product-action-2-red">
-                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a title="Quick View" href="#" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
+                                    <a title="Add To Cart" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-shopping-cart"></i></a>
+                                    <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
+                                    <a title="Compare" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-retweet"></i></a>
+                               
                                 </div>
                             </div>
                             <div class="product-content-2">
                                 <div class="title-price-wrap-2">
-                                    <h3><a href="#">前端网站</a></h3>
+                                    <h3><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">前端网站</a></h3>
                                     <div class="price-2">
                                         <span>￥100.00</span>
                                     </div>
@@ -269,21 +285,21 @@
                         </div>
                         <div class="product-wrap-2 mb-25">
                             <div class="product-img">
-                                <a href="#">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     <img class="default-img" src="static/picture/hm14-pro-4.jpg" alt="">
                                     <img class="hover-img" src="static/picture/hm14-pro-4.jpg" alt="">
                                 </a>
                                 <span class="purple">New</span>
                                 <div class="product-action-2 product-action-2-red">
-                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a title="Quick View" href="#" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
+                                    <a title="Add To Cart" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-shopping-cart"></i></a>
+                                    <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
+                                    <a title="Compare" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-retweet"></i></a>
+                               
                                 </div>
                             </div>
                             <div class="product-content-2">
                                 <div class="title-price-wrap-2">
-                                    <h3><a href="#">前端响应式活动页</a></h3>
+                                    <h3><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">前端响应式活动页</a></h3>
                                     <div class="price-2">
                                         <span>￥100.00</span>
                                     </div>
@@ -295,28 +311,28 @@
                         </div>
                     </div>
                     <div class="pro-view-more text-center">
-                        <a href="#"><i class="fa fa-refresh"></i> View More</a>
+                        <a href="https://github.com/DANSmartCloud/DANSC/discussions/1"><i class="fa fa-refresh"></i> 获取帮助</a>
                     </div>
                 </div>
                 <div class="tab-pane active" id="hm14-tab2">
                     <div class="product-slider-active owl-carousel owl-dot-none">
                         <div class="product-wrap-2 mb-25">
                             <div class="product-img">
-                                <a href="#">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     <img class="default-img" src="static/picture/hm14-pro-1.jpg" alt="">
                                     <img class="hover-img" src="static/picture/hm14-pro-1.jpg" alt="">
                                 </a>
                                 <span class="red">-10%</span>
                                 <div class="product-action-2 product-action-2-red">
-                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a title="Quick View" href="#" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
+                                    <a title="Add To Cart" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-shopping-cart"></i></a>
+                                    <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
+                                    <a title="Compare" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-retweet"></i></a>
+                               
                                 </div>
                             </div>
                             <div class="product-content-2">
                                 <div class="title-price-wrap-2">
-                                    <h3><a href="#">云云桌面</a></h3>
+                                    <h3><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">云云桌面</a></h3>
                                     <div class="price-2">
                                         <span>￥50.00</span>
                                         <span class="old red">￥80.00</span>
@@ -329,21 +345,21 @@
                         </div>
                         <div class="product-wrap-2 mb-25">
                             <div class="product-img">
-                                <a href="#">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     <img class="default-img" src="static/picture/hm14-pro-2.jpg" alt="">
                                     <img class="hover-img" src="static/picture/hm14-pro-2.jpg" alt="">
                                 </a>
                                 <span class="purple">New</span>
                                 <div class="product-action-2 product-action-2-red">
-                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a title="Quick View" href="#" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
+                                    <a title="Add To Cart" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-shopping-cart"></i></a>
+                                    <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
+                                    <a title="Compare" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-retweet"></i></a>
+                               
                                 </div>
                             </div>
                             <div class="product-content-2">
                                 <div class="title-price-wrap-2">
-                                    <h3><a href="#">云云浏览器Windows版与抢鲜版</a></h3>
+                                    <h3><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">云云浏览器Windows版与抢鲜版</a></h3>
                                     <div class="price-2">
                                         <span>￥40.00</span>
                                         <span class="old red">￥50.00</span>
@@ -356,21 +372,21 @@
                         </div>
                         <div class="product-wrap-2 mb-25">
                             <div class="product-img">
-                                <a href="#">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     <img class="default-img" src="static/picture/hm14-pro-3.jpg" alt="">
                                     <img class="hover-img" src="static/picture/hm14-pro-3.jpg" alt="">
                                 </a>
                                 <span class="red">-10%</span>
                                 <div class="product-action-2 product-action-2-red">
-                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a title="Quick View" href="#" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
+                                    <a title="Add To Cart" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-shopping-cart"></i></a>
+                                    <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
+                                    <a title="Compare" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-retweet"></i></a>
+                               
                                 </div>
                             </div>
                             <div class="product-content-2">
                                 <div class="title-price-wrap-2">
-                                    <h3><a href="#">Adriton OS</a></h3>
+                                    <h3><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Adriton OS</a></h3>
                                     <div class="price-2">
                                         <span>$ 40.00</span>
                                         <span class="old red">$ 50.00</span>
@@ -383,21 +399,21 @@
                         </div>
                         <div class="product-wrap-2 mb-25">
                             <div class="product-img">
-                                <a href="#">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     <img class="default-img" src="static/picture/hm14-pro-4.jpg" alt="">
                                     <img class="hover-img" src="static/picture/hm14-pro-4.jpg" alt="">
                                 </a>
                                 <span class="purple">New</span>
                                 <div class="product-action-2 product-action-2-red">
-                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a title="Quick View" href="#" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
+                                    <a title="Add To Cart" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-shopping-cart"></i></a>
+                                    <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
+                                    <a title="Compare" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-retweet"></i></a>
+                               
                                 </div>
                             </div>
                             <div class="product-content-2">
                                 <div class="title-price-wrap-2">
-                                    <h3><a href="#">岸汀Anteen操作系统</a></h3>
+                                    <h3><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">岸汀Anteen操作系统</a></h3>
                                     <div class="price-2">
                                         <span>￥80.00</span>
                                     </div>
@@ -409,21 +425,21 @@
                         </div>
                         <div class="product-wrap-2 mb-25">
                             <div class="product-img">
-                                <a href="#">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     <img class="default-img" src="static/picture/hm14-pro-2.jpg" alt="">
                                     <img class="hover-img" src="static/picture/hm14-pro-2.jpg" alt="">
                                 </a>
                                 <span class="purple">New</span>
                                 <div class="product-action-2 product-action-2-red">
-                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a title="Quick View" href="#" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
+                                    <a title="Add To Cart" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-shopping-cart"></i></a>
+                                    <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
+                                    <a title="Compare" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-retweet"></i></a>
+                               
                                 </div>
                             </div>
                             <div class="product-content-2">
                                 <div class="title-price-wrap-2">
-                                    <h3><a href="#">云云频谱</a></h3>
+                                    <h3><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">云云频谱</a></h3>
                                     <div class="price-2">
                                         <span>￥30.00</span>
                                     </div>
@@ -442,21 +458,21 @@
                     <div class="product-slider-active owl-carousel owl-dot-none">
                         <div class="product-wrap-2 mb-25">
                             <div class="product-img">
-                                <a href="#">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     <img class="default-img" src="static/picture/hm14-pro-3.jpg" alt="">
                                     <img class="hover-img" src="static/picture/hm14-pro-3.jpg" alt="">
                                 </a>
                                 <span class="red">-10%</span>
                                 <div class="product-action-2 product-action-2-red">
-                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a title="Quick View" href="#" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
+                                    <a title="Add To Cart" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-shopping-cart"></i></a>
+                                    <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
+                                    <a title="Compare" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-retweet"></i></a>
+                               
                                 </div>
                             </div>
                             <div class="product-content-2">
                                 <div class="title-price-wrap-2">
-                                    <h3><a href="#">云云桌面</a></h3>
+                                    <h3><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">云云桌面</a></h3>
                                     <div class="price-2">
                                         <span>￥50.00</span>
                                         <span class="old red">￥80.00</span>
@@ -469,21 +485,21 @@
                         </div>
                         <div class="product-wrap-2 mb-25">
                             <div class="product-img">
-                                <a href="#">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     <img class="default-img" src="static/picture/hm14-pro-1.jpg" alt="">
                                     <img class="hover-img" src="static/picture/hm14-pro-1.jpg" alt="">
                                 </a>
                                 <span class="purple">New</span>
                                 <div class="product-action-2 product-action-2-red">
-                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a title="Quick View" href="#" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
+                                    <a title="Add To Cart" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-shopping-cart"></i></a>
+                                    <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
+                                    <a title="Compare" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-retweet"></i></a>
+                               
                                 </div>
                             </div>
                             <div class="product-content-2">
                                 <div class="title-price-wrap-2">
-                                    <h3><a href="#">云云频谱</a></h3>
+                                    <h3><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">云云频谱</a></h3>
                                     <div class="price-2">
                                         <span>￥30.00</span>
                                     </div>
@@ -495,21 +511,21 @@
                         </div>
                         <div class="product-wrap-2 mb-25">
                             <div class="product-img">
-                                <a href="#">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     <img class="default-img" src="static/picture/hm14-pro-4.jpg" alt="">
                                     <img class="hover-img" src="static/picture/hm14-pro-4.jpg" alt="">
                                 </a>
                                 <span class="red">-10%</span>
                                 <div class="product-action-2 product-action-2-red">
-                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a title="Quick View" href="#" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
+                                    <a title="Add To Cart" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-shopping-cart"></i></a>
+                                    <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
+                                    <a title="Compare" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-retweet"></i></a>
+                               
                                 </div>
                             </div>
                             <div class="product-content-2">
                                 <div class="title-price-wrap-2">
-                                    <h3><a href="#">云云浏览器Windows版与抢鲜版</a></h3>
+                                    <h3><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">云云浏览器Windows版与抢鲜版</a></h3>
                                     <div class="price-2">
                                         <span>￥40.00</span>
                                         <span class="old red">￥50.00</span>
@@ -522,21 +538,21 @@
                         </div>
                         <div class="product-wrap-2 mb-25">
                             <div class="product-img">
-                                <a href="#">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     <img class="default-img" src="static/picture/hm14-pro-2.jpg" alt="">
                                     <img class="hover-img" src="static/picture/hm14-pro-2.jpg" alt="">
                                 </a>
                                 <span class="purple">New</span>
                                 <div class="product-action-2 product-action-2-red">
-                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a title="Quick View" href="#" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
+                                    <a title="Add To Cart" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-shopping-cart"></i></a>
+                                    <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
+                                    <a title="Compare" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-retweet"></i></a>
+                               
                                 </div>
                             </div>
                             <div class="product-content-2">
                                 <div class="title-price-wrap-2">
-                                    <h3><a href="#">岸汀Anteen操作系统</a></h3>
+                                    <h3><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">岸汀Anteen操作系统</a></h3>
                                     <div class="price-2">
                                         <span>￥80.00</span>
                                     </div>
@@ -548,21 +564,21 @@
                         </div>
                         <div class="product-wrap-2 mb-25">
                             <div class="product-img">
-                                <a href="#">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     <img class="default-img" src="static/picture/hm14-pro-1.jpg" alt="">
                                     <img class="hover-img" src="static/picture/hm14-pro-1.jpg" alt="">
                                 </a>
                                 <span class="purple">New</span>
                                 <div class="product-action-2 product-action-2-red">
-                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a title="Quick View" href="#" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
+                                    <a title="Add To Cart" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-shopping-cart"></i></a>
+                                    <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
+                                    <a title="Compare" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-retweet"></i></a>
+                               
                                 </div>
                             </div>
                             <div class="product-content-2">
                                 <div class="title-price-wrap-2">
-                                    <h3><a href="#">纯净软件安装包及实用资源库</a></h3>
+                                    <h3><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">纯净软件安装包及实用资源库</a></h3>
                                     <div class="price-2">
                                         <span>￥80.00</span>
                                     </div>
@@ -581,21 +597,21 @@
                     <div class="product-slider-active owl-carousel owl-dot-none">
                         <div class="product-wrap-2 mb-25">
                             <div class="product-img">
-                                <a href="#">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     <img class="default-img" src="static/picture/hm14-pro-2.jpg" alt="">
                                     <img class="hover-img" src="static/picture/hm14-pro-2.jpg" alt="">
                                 </a>
                                 <span class="red">-10%</span>
                                 <div class="product-action-2 product-action-2-red">
-                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a title="Quick View" href="#" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
+                                    <a title="Add To Cart" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-shopping-cart"></i></a>
+                                    <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
+                                    <a title="Compare" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-retweet"></i></a>
+                               
                                 </div>
                             </div>
                             <div class="product-content-2">
                                 <div class="title-price-wrap-2">
-                                    <h3><a href="#">云云浏览器Android体验版</a></h3>
+                                    <h3><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">云云浏览器Android体验版</a></h3>
                                     <div class="price-2">
                                         <span>￥10.00</span>
                                         <span class="old red">￥20.00</span>
@@ -608,7 +624,7 @@
                         </div>
                         <div class="product-wrap-2 mb-25">
                             <div class="product-img">
-                                <a href="#">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     <img class="default-img" src="static/picture/hm14-pro-1.jpg" alt="">
                                     <img class="hover-img" src="static/picture/hm14-pro-1.jpg" alt="">
                                 </a>
@@ -634,21 +650,21 @@
                         </div>
                         <div class="product-wrap-2 mb-25">
                             <div class="product-img">
-                                <a href="#">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     <img class="default-img" src="static/picture/hm14-pro-4.jpg" alt="">
                                     <img class="hover-img" src="static/picture/hm14-pro-4.jpg" alt="">
                                 </a>
                                 <span class="red">Pro</span>
                                 <div class="product-action-2 product-action-2-red">
-                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a title="Quick View" href="#" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
+                                    <a title="Add To Cart" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-shopping-cart"></i></a>
+                                    <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
+                                    <a title="Compare" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-retweet"></i></a>
+                               
                                 </div>
                             </div>
                             <div class="product-content-2">
                                 <div class="title-price-wrap-2">
-                                    <h3><a href="#">全套办公计划</a></h3>
+                                    <h3><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">全套办公计划</a></h3>
                                     <div class="price-2">
                                         <span>￥365.00</span>
                                     </div>
@@ -660,21 +676,21 @@
                         </div>
                         <div class="product-wrap-2 mb-25">
                             <div class="product-img">
-                                <a href="#">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     <img class="default-img" src="static/picture/hm14-pro-3.jpg" alt="">
                                     <img class="hover-img" src="static/picture/hm14-pro-3.jpg" alt="">
                                 </a>
                                 <span class="purple">New</span>
                                 <div class="product-action-2 product-action-2-red">
-                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a title="Quick View" href="#" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
+                                    <a title="Add To Cart" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-shopping-cart"></i></a>
+                                    <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
+                                    <a title="Compare" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-retweet"></i></a>
+                               
                                 </div>
                             </div>
                             <div class="product-content-2">
                                 <div class="title-price-wrap-2">
-                                    <h3><a href="#">其它服务</a></h3>
+                                    <h3><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">其它服务</a></h3>
                                     <div class="price-2">
                                         <span>不定价</span>
                                     </div>
@@ -686,21 +702,21 @@
                         </div>
                         <div class="product-wrap-2 mb-25">
                             <div class="product-img">
-                                <a href="#">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     <img class="default-img" src="static/picture/hm14-pro-2.jpg" alt="">
                                     <img class="hover-img" src="static/picture/hm14-pro-2.jpg" alt="">
                                 </a>
                                 <span class="purple">New</span>
                                 <div class="product-action-2 product-action-2-red">
-                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a title="Quick View" href="#" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
+                                    <a title="Add To Cart" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-shopping-cart"></i></a>
+                                    <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
+                                    <a title="Compare" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-retweet"></i></a>
+                               
                                 </div>
                             </div>
                             <div class="product-content-2">
                                 <div class="title-price-wrap-2">
-                                    <h3><a href="#">疑难问题与优化</a></h3>
+                                    <h3><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">疑难问题与优化</a></h3>
                                     <div class="price-2">
                                         <span>不定价</span>
                                     </div>
@@ -791,7 +807,9 @@
             </div>
         </div>
     </div>
-    <iframe width="100%" id="tm-section-4" height="200%" src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAATF_KMVUNjA4Q0RNOVdUQkZGN0VLMThJQ0E0N0dVUy4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100000vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
+    <iframe width="100%" id="tm-section-6" height="100%" src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAATF_KMVUMzBWS0ZUT1BFT0w4QThLVUtXT0RZT0VWMS4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:50%; max-height:200vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
+    <iframe width="100%" id="tm-section-6" height="100%" src="https://forms.office.com/Pages/AnalysisPage.aspx?AnalyzerToken=pvl8tfqDHzR2rMrjpP25iNjlYrj9exsK&id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAATF_KMVUMzBWS0ZUT1BFT0w4QThLVUtXT0RZT0VWMS4u" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:49%; max-height:200vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
+    <iframe width="100%" id="tm-section-4" height="45%" src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAATF_KMVUNjA4Q0RNOVdUQkZGN0VLMThJQ0E0N0dVUy4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100000vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
 </div>
     </div>
     <footer class="footer-area pt-80 pb-25" style="background-image:url(static/images/bg-3.jpg);">
