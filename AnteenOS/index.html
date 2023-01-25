@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AnteenOS-轻便简洁，高效运行</title>
+  <meta name="keywords" content="DAN智云，系统，操作系统，魔改系统，开发系统，岸汀操作系统，岸汀，Anteen，AnteenOS" />
+  <meta name="description" content="DAN智云发布的首个可启动操作系统！基于Windows10，快速上手！" />
+  <link href="main.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <h1 class="page-logo"><a href="https://dansmartcloud.github.io" target="_blank" class="xl-logo nav-item" title="迅雷"
+          xl-xla-type="click" xl-xla-category="common_action" xl-xla-action="navgation_click"
+          xl-xla-extdata='{"button": "home_page"}'></a></h1>
+      <div class="header-nav"><a xl-xla-type="click" xl-xla-category="common_action" xl-xla-action="navgation_click"
+          xl-xla-extdata='{"button": "home_page"}' class="nav-item" href="https://dansmartcloud.github.io" target="">DAN智云官网 </a><a
+          xl-xla-type="click" xl-xla-category="common_action" xl-xla-action="navgation_click"
+          xl-xla-extdata='{ "button": "dl_center"}' class="nav-item" href="https://dansmartcloud.github.io/newyear" target="_blank">产品活动中心
+        </a><a xl-xla-type="click" xl-xla-category="common_action" xl-xla-action="navgation_click"
+          xl-xla-extdata='{ "button": "kflt"}' class="nav-item" href="https://github.com/DANSmartCloud/DANSC/discussions/1"
+          target="_blank">官方论坛 </a><a class="nav-item item-btn" href="https://wx.stariverpan.com/web/share/?lang=zh&shareId=NjIzMTc0NjI4OTM5OTI3NTUy&type=clouds"
+          target="_blank">立即下载</a></div>
+    </header>
+    <div class="page page1">
+      <div class="content-pc">
+        <div class="page1-txt">
+          <h2><span class="xl-title">岸汀</span><span class="xl-text">OS</span></h2>
+          <p class="txt-detail">轻便简洁，高效运行</p><a xl-xla-type="click" xl-xla-category="download"
+            xl-xla-action="xl11_banner_download" href="https://wx.stariverpan.com/web/share/?lang=zh&shareId=NjIzMTc0NjI4OTM5OTI3NTUy&type=clouds" class="button-down"
+            target="_blank">立即下载</a>
+          <!--<div class="link-down"><a href="javascript:;" class="link-down" xl-xla-type="click" xl-xla-category="download"
+              xl-xla-action="xl11_banner_offline_download" target="_blank">下载wim镜像包</a></div>-->
+        </div><span class="spr-light-1"></span> <span class="spr-light-2"></span> <span class="spr-light-3"></span>
+        <span class="spr-light-4"></span> <span class="silk"></span> <span class="client"><i class="shadow"></i> <i
+            class="interface"></i> <i class="cloud"></i></span>
+      </div>
+    </div>
+    <div id="page2" class="page page2">
+      <div class="content-pc">
+        <h2 id="title2" class="title-page">轻便便携</h2>
+        <div id="text2" class="txt-page"><p>AnteenOS搭配使用艾云操作系统</p>
+          <p>引导工具，系统随身带！</p></div>
+        <div class="page2-ele"><span class="spr2-rect4"></span> <span class="spr2-background"></span> <span
+            class="spr2-rect1"></span> <span class="spr2-rect2"></span> <span class="spr2-rect3"></span></div>
+      </div>
+    </div>
+    <div id="page4" class="page page4">
+      <div id="star-canvas" class="star-wrap"></div>
+      <div class="content-pc">
+        <h2 class="title-page">高速运行</h2>
+        <p class="txt-page"><span id="totalYear"></span>年技术沉淀，打造更好的高效体验</p><span class="spr4-form"></span> <span
+          class="spr4-gradient"></span> <span class="spr4-rocket"><i></i></span>
+      </div>
+    </div>
+    <div id="page5" class="page page5">
+      <div class="page5-ele"><span class="spr5-rect1"></span> <span class="spr5-rect2"></span> <span
+          class="spr5-rect5"></span> <span class="spr5-4K"></span> <span class="line-1"></span> <span
+          class="line-2"></span> <span class="line-3"></span></div>
+      <div class="content-pc">
+        <div class="context-pc-text">
+          <h2 class="title-page">极致体验</h2>
+          <p class="txt-page">操作优化，超强硬件适配，任意分辨率都能带来舒适的操作感。
+            简洁易上手，修复多数原生问题！</p>
+        </div><a href="https://wx.stariverpan.com/web/share/?lang=zh&shareId=NjIzMTc0NjI4OTM5OTI3NTUy&type=clouds" class="button-down" xl-xla-type="click"
+          xl-xla-category="download" xl-xla-action="xl11_bottom_download" target="_blank">立即下载</a>
+      </div>
+      <footer class="footer">
+        <p>&copy; 2015-<span id="footerYear"></span> DAN智云 版权所有</p>
+        <script>(function () {
+            function getServerDate(callback) {
+              var xhr = null;
+              var now = new Date();
+
+              callback(now);
+              if (window.XMLHttpRequest) {
+                xhr = new window.XMLHttpRequest();
+              } else {
+                // ie
+                xhr = new ActiveObject("Microsoft");
+              }
+
+              xhr.open("GET", window.location.href, true);
+              xhr.send(null);
+
+              xhr.onreadystatechange = function () {
+                if (xhr.readyState == 2) {
+                  var dateStr = xhr.getResponseHeader("Date");
+                  console.log("dateStr =", dateStr);
+
+                  const date = dateStr ? new Date(dateStr) : now;
+                  callback && callback(date);
+                }
+              };
+            }
+
+            getServerDate(function (now) {
+              const nowYear = now.getFullYear();
+              document.getElementById("footerYear").innerText = nowYear;
+              document.getElementById("totalYear").innerText = nowYear - 2015
+            });
+          })();</script>
+      </footer>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+
+</html>
