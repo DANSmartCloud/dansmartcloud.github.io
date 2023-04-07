@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta lang="zh">
+<head>
+    <title>HelloWorld</title>
+<script>
+    // 获取画布元素和上下文
+const canvas = document.getElementById('particle-canvas');
+const ctx = canvas.getContext('2d');
+
+// 设置画布宽高
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+// 文字内容和样式
+const text = '123456';
+ctx.font = 'bold 70px Arial';
+
+// 获取文字在画布中的位置
+const textWidth = ctx.measureText(text).width;
+const x = (canvas.width - textWidth) / 2;
+const y = canvas.height / 2 + 10; // 偏移量
+
+// 创建粒子对象
+class Particle {
+  constructor(x, y, size) {
+    this.x = x;
+    this.y = y;
+    this.size = size;
+    this.baseX = this.x;
+    this.baseY = this.y;
+    this.density = Math.random() * 30 + 1;
+  }
+  
+  // 绘制粒子
+  draw() {
+    ctx.fillStyle = '#000';
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.closePath();
+    ctx.fill();
+  }
+  
+  // 更新粒子位置
+  update() {
+    this.size -= 0.05; // 粒子逐渐变小
+    if (this.size < 0) {
+      this.x = this.baseX + (Math.random() * 20 - 10);
+      this.y = this.baseY + (Math.random() * 20 - 10);
+      this.size = Math.random() * 2 + 1;
+    }
+    this.x += Math.random() * 2 - 1;
+    this.y += Math.random() * 2 - 1;
+  }
+}
+
+// 创建粒子数组
+let particles = [];
+
+// 初始化粒子数组
+function init() {
+  // 获取文字像素信息
+  const imageData = ctx.getImageData(x, y, textWidth, 100);
+
+  // 遍历像素信息，每个像素点为一个粒子
+  for (let y = 0; y < imageData.height; y++) {
+    for (let x = 0; x < imageData.width; x++) {
+      if (imageData.data[(y * 4 * imageData.width) + (x * 4) + 3] > 128) {
+        const posX = x + this.x;
+        const posY = y + this.y;
+        const size = 2;
+        particles.push(new Particle(posX * 5, posY * 5, size));
+      }
+    }
+  }
+}
+
+// 动画循环
+function animate() {
+  requestAnimationFrame(animate);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles.forEach(particle => {
+    particle.update();
+    particle.draw();
+  });
+}
+
+// 执行初始化和动画循环
+init();
+animate();
+
+</script>
+</head>
+<body>
+    <h1>.</h1>
+    <h1>.</h1>
+<canvas id="particle-canvas"></canvas>
+<h1>.</h1>
+<h1>.</h1>
+</body>
+</html>
