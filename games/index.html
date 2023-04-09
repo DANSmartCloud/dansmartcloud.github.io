@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta lang="zh">
+<head>
+    <title>米云社-DAN智云旗下网页游戏社区</title>
+    <SCRIPT language=JavaScript>
+        alert("欢迎来到米云社！这是一个由DAN智云运维的在线游戏平台。为响应国家政策，您需要确认您已成年的身份才能游戏，否则您将无法正常游戏。")
+		function password() {
+			var testV = 1;
+			var pass1 = prompt('请在下方输入“我已成年”，然后点击确定来完成成年认证。', '');
+			while (testV < 3) {
+				if (!pass1)
+					history.go(-1);
+				if (pass1 == "我已成年") {
+					alert('成年认证成功！');
+					break;
+				}
+				testV += -1;
+				var pass1 = prompt('成年认证失败！请重试在下方输入“我已成年”，然后点击确定来完成成年认证。');
+			}
+			if (pass1 != "password" & testV == 3)
+				history.go(-1);
+			return " ";
+		}
+		document.write(password()); 
+	</SCRIPT>
+    <meta http-equiv="refresh" content="0; url=go.html">
+</head>
