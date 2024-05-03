@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>禾云信创-HodEasyCode加解密工具</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Microsoft YaHei', 'Segoe UI', Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url("https://tpapi.haouou.com/drblog/");
+        }
+        .crypto-tool {
+            background-color: rgba(255, 255, 255, 0.629);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            animation: fadeInDown 1s ease-in-out;
+        }
+        textarea, input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            resize: vertical;
+            font-family: 'Microsoft YaHei', 'Segoe UI', Arial, sans-serif;
+        }
+        textarea:focus, input:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+        button:hover, button:focus {
+            background-color: #0057b3b9;
+            box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.25);
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+       
+       
+        
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+}
+
+.action-buttons button {
+    width: 100%; /* 设置按钮宽度为100%，使其在容器内拉长 */
+    padding: 15px 0; /* 调整按钮的上下内边距以适应长度变化 */
+    margin: 0; /* 移除默认外边距 */
+}
+.decrypt-action-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        .decrypt-action-buttons button {
+            width: 100%;
+            padding: 15px 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="crypto-tool">
+        <h2>HodEasyCode</h2>
+        <h3>加密操作</h3>
+        <label for="plaintext">明文</label>
+        <textarea id="plaintext" rows="5"></textarea>
+        <div class="action-buttons">
+            <button id="encryptButton">加密</button>
+            <p>···</p>
+            <button type="button" class="copy-button" onclick="encryptedtext()" data-clipboard-target="#ciphertext">复制密文</button>
+        </div>
+        <label for="ciphertext">密文</label>
+        <textarea id="ciphertext" rows="5" readonly></textarea>
+        <h3>解密操作</h3>
+    <label for="receivedCiphertext">密文</label>
+    <textarea id="receivedCiphertext" rows="5"></textarea>
+    <div class="decrypt-action-buttons">
+        <button id="remoteDecryptButton">解密</button>
+        <p>···</p>
+        <button type="button" class="copy-button" onclick="decryptedtext()" data-clipboard-target="#remoteDecryptedText">复制明文</button>
+    </div>
+    <label for="remoteDecryptedText">明文</label>
+    <textarea id="remoteDecryptedText" rows="5" readonly></textarea>
+    </div>
+    <script>
+       async function importFixedKey(keyMaterial) {
+    if (keyMaterial.length * 8 !== 256) {
+        throw new Error("Fixed key material must be 32 bytes long for AES-256");
+    }
+    return window.crypto.subtle.importKey(
+        "raw",
+        new TextEncoder().encode(keyMaterial),
+        { name: "AES-GCM", length: 256 },
+        true,
+        ["encrypt", "decrypt"]
+    );
+}
+
+function encodeToBase64(arrayBuffer) {
+    return btoa(String.fromCharCode.apply(null, new Uint8Array(arrayBuffer)));
+}
+
+function decodeFromBase64(base64) {
+    const binaryString = atob(base64);
+    return new Uint8Array(binaryString.length).map((_, i) => binaryString.charCodeAt(i));
+}
+
+async function encryptData(fixedKey) {
+    try {
+        const iv = window.crypto.getRandomValues(new Uint8Array(12));
+        const encodedIV = encodeToBase64(iv);
+        
+        const plaintext = document.getElementById('plaintext').value;
+        const encoder = new TextEncoder();
+        const encodedPlaintext = encoder.encode(plaintext);
+
+        const ciphertext = await window.crypto.subtle.encrypt(
+            { name: "AES-GCM", iv },
+            fixedKey,
+            encodedPlaintext
+        );
+
+        const fullMessage = `HEC.${encodedIV}.${encodeToBase64(ciphertext)}`;
+        document.getElementById('ciphertext').value = fullMessage;
+    } catch (e) {
+        console.error("Encryption failed", e);
+    }
+}
+
+async function decryptData(fixedKey) {
+    try {
+        const fullMessage = document.getElementById('ciphertext').value;
+        if (!fullMessage.startsWith("HEC.")) {
+            throw new Error("Ciphertext does not start with the expected key header.");
+        }
+        const [_, encodedIV, encodedCiphertext] = fullMessage.split('.');
+        
+        const iv = decodeFromBase64(encodedIV);
+        const ciphertext = decodeFromBase64(encodedCiphertext);
+
+        const decrypted = await window.crypto.subtle.decrypt(
+            { name: "AES-GCM", iv },
+            fixedKey,
+            ciphertext
+        );
+        document.getElementById('remoteDecryptedText').value = new TextDecoder().decode(decrypted);
+    } catch (e) {
+        console.error("Decryption failed", e);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
+    const fixedKeyMaterial = "Hocloud_TechnologyCreativeStudio";
+    const fixedKey = await importFixedKey(fixedKeyMaterial);
+    
+    document.getElementById('encryptButton').addEventListener('click', () => encryptData(fixedKey));
+    document.getElementById('decryptButton').addEventListener('click', () => decryptData(fixedKey));
+});
+function encryptedtext(){
+    var copyText = document.getElementById("ciphertext");
+    copyText.select();
+    document.execCommand("copy");
+    alert("复制成功");
+}
+    </script>
+        <script>
+    document.getElementById('remoteDecryptButton').addEventListener('click', async () => {
+        const receivedCiphertext = document.getElementById('receivedCiphertext').value;
+        if (!receivedCiphertext.startsWith("HEC.")) {
+            alert("密文无效，请检查！正确的密文应该以“HEC.”开头");
+            return;
+        }
+        try {
+            // 确保使用与加密端相同的密钥
+            const fixedKeyMaterial = "Hocloud_TechnologyCreativeStudio";
+            const fixedKey = await importFixedKey(fixedKeyMaterial);
+            await decryptRemoteData(fixedKey, receivedCiphertext);
+        } catch (e) {
+            console.error("Decryption failed", e);
+        }
+    });
+    
+    async function decryptRemoteData(fixedKey, remoteCiphertext) {
+        try {
+            const [_, encodedIV, encodedCiphertext] = remoteCiphertext.split('.');
+            const iv = decodeFromBase64(encodedIV);
+            const ciphertext = decodeFromBase64(encodedCiphertext);
+            const decrypted = await window.crypto.subtle.decrypt(
+                { name: "AES-GCM", iv },
+                fixedKey,
+                ciphertext
+            );
+            document.getElementById('remoteDecryptedText').value = new TextDecoder().decode(decrypted);
+        } catch (e) {
+            console.error("Remote decryption failed", e);
+        }
+    }
+    function decryptedtext(){
+        var copyText = document.getElementById("remoteDecryptedText");
+        copyText.select();
+        document.execCommand("copy");
+        alert("复制成功");
+    }
+    </script>
+</body>
+</html>
