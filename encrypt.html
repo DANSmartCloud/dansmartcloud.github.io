@@ -251,7 +251,15 @@ showToast('欢迎使用HodEasyCode加解密工具!');
 }
 
 function encodeToBase64(arrayBuffer) {
-    return btoa(String.fromCharCode.apply(null, new Uint8Array(arrayBuffer)));
+    try {
+        return btoa(String.fromCharCode.apply(null, new Uint8Array(arrayBuffer)));
+    } catch (e) {
+        setTimeout(() => {
+            showToast("加密失败！明文超过最大长度限度！");
+        }, 500);
+        
+    }
+    
 }
 
 function decodeFromBase64(base64) {
