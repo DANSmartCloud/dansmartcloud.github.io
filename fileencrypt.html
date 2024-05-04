@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>禾云信创-HodEasyFile加解密工具</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Microsoft YaHei', 'Segoe UI', Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url("https://tpapi.haouou.com/drblog/");
+        }
+        .crypto-tool {
+            background-color: rgba(255, 255, 255, 0.629);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            animation: fadeInDown 1s ease-in-out;
+        }
+        textarea, input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            resize: vertical;
+            font-family: 'Microsoft YaHei', 'Segoe UI', Arial, sans-serif;
+        }
+        textarea:focus, input:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+        button:hover, button:focus {
+            background-color: #0057b3b9;
+            box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.25);
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+       
+       
+        
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+}
+
+.action-buttons button {
+    width: 100%; /* 设置按钮宽度为100%，使其在容器内拉长 */
+    padding: 15px 0; /* 调整按钮的上下内边距以适应长度变化 */
+    margin: 0; /* 移除默认外边距 */
+}
+.decrypt-action-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        .decrypt-action-buttons button {
+            width: 100%;
+            padding: 15px 0;
+            margin: 0;
+        }
+        textarea {
+            backdrop-filter: blur(5px);
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+
+        .fa-spinner {
+            animation: spin 1s infinite linear;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* 定义toast容器的基础样式 */
+.toast {
+    position: fixed;
+    bottom: 20px; /* 调整此值可改变与底部的距离 */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999; /* 确保toast在页面其他元素之上 */
+    pointer-events: none; /* 防止toast干扰页面下方元素的点击 */
+}
+
+/* 内部元素，用于包裹实际消息内容 */
+
+
+/* 当toast显示时应用的类 */
+.toast.show {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s; /* 确保显示时立即可见 */
+}
+        #loadingSpinner {
+    position: fixed; /* 这使得元素相对于浏览器窗口定位 */
+    top: 50%; /* 将元素垂直居中（如果需要） */
+    left: 50%; /* 将元素水平居中（如果需要） */
+    transform: translate(-50%, -50%); /* 调整以确保居中对齐 */
+    z-index: 9999; /* 设置一个高的z-index确保它浮于其他内容之上 */
+    display: none;
+    justify-content: center;
+    align-items: center; /* 如果div里有文本或图标，这有助于居中它们 */
+    /*pointer-events: none; *//* 防止加载指示器干扰页面的点击事件 */
+    
+    
+}
+
+/* 如果需要调整大小或样式，请自定义以下属性 */
+
+    </style>
+</head>
+<body>
+    <div class="crypto-tool">
+ 
+        <h2>HodEasyFile</h2>
+ 
+        <div id="loadingSpinner" class="spinner">
+            <i class="fas fa-spinner fa-pulse"></i>
+        </div>
+        <h3>加密操作</h3>
+        <div class="action-buttons">
+        <button onclick="document.getElementById('fileInput').click()">选择文件</button>
+        <input type="text" id="fileNameDisplay" readonly>
+    </div>
+        <input type="file" id="fileInput" style="display: none;" />
+        <div class="action-buttons">
+            <button id="fileEncryptButton">加密文件</button>
+            <p>···</p>
+           <button id="fileDecryptButton">解密文件</button>
+           <p>···</p>
+            <button onclick="javascript:location.reload()">刷新清空</button>
+        </div>
+        
+    <h4>禾云信创-HodEasyFile加解密工具·版本1.0</h4>
+    <h4>云云探索者自研算法，版权所有，严禁商用！</h4>
+    </div>
+    <script>
+        var fileInput = document.getElementById('fileInput');
+var fileNameDisplay = document.getElementById('fileNameDisplay');
+
+// 监听文件输入框的change事件
+fileInput.addEventListener('change', function(e) {
+    // 获取用户选择的文件列表（即使多选，这里也只取第一个文件的名称作为示例）
+    var fileName = e.target.files[0].name;
+    // 将文件名设置到显示框中
+    fileNameDisplay.value = fileName;
+});
+        function showLoading() {
+            document.getElementById('loadingSpinner').style.display = 'block';
+        }
+
+        function hideLoading() {
+            const loadingSpinner = document.getElementById('loadingSpinner');
+            setTimeout(() => {
+                document.getElementById('loadingSpinner').style.display = 'none';
+                setTimeout(() => document.body.removeChild(toastElement), 300);
+            }, 1000);
+
+        }
+
+        function showToast(message) {
+    console.log("Show Toast function called with message:", message);
+    const toastElement = document.createElement('div');
+    toastElement.className = 'toast';
+    toastElement.innerHTML = `<div>${message}</div>`;
+    toastElement.style.cssText = `
+        position: fixed; /* 固定位置 */
+        bottom: 20px; /* 距离底部的距离 */
+        left: 50%; /* 水平居中 */
+        transform: translateX(-50%); /* 居中调整 */
+        padding: 10px 20px; /* 内边距 */
+        background-color: #1FC5F9; /* 背景色 */
+        color: #fff; /* 文字颜色 */
+        border-radius: 5px; /* 圆角 */
+        z-index: 1000; /* 确保在最上层 */
+        opacity: 0; /* 初始不透明度 */
+        visibility: visible; /* 确保可见 */
+        transition: opacity 0.5s ease; /* 添加过渡效果 */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    `;
+    document.body.appendChild(toastElement);
+
+    // 使用setTimeout来控制显示和隐藏
+    setTimeout(() => {
+        toastElement.style.opacity = '1'; // 使toast逐渐显示
+    }, 50); // 这里可以调整以控制显示的延迟
+
+    setTimeout(() => {
+        toastElement.style.opacity = '0'; // 使toast逐渐隐藏
+        setTimeout(() => {
+            document.body.removeChild(toastElement);
+        }, 300); // 确保隐藏动画完成后移除元素
+    }, 2000); // 2秒后开始隐藏动画
+}
+
+// 示例调用
+showToast('欢迎使用HodEasyFile加解密工具!');
+       async function importFixedKey(keyMaterial) {
+    if (keyMaterial.length * 8 !== 256) {
+        throw new Error("Fixed key material must be 32 bytes long for AES-256");
+    }
+    return window.crypto.subtle.importKey(
+        "raw",
+        new TextEncoder().encode(keyMaterial),
+        { name: "AES-GCM", length: 256 },
+        true,
+        ["encrypt", "decrypt"]
+    );
+}
+
+function encodeToBase64(arrayBuffer) {
+    try {
+        return btoa(String.fromCharCode.apply(null, new Uint8Array(arrayBuffer)));
+    } catch (e) {
+        setTimeout(() => {
+            showToast("加密失败！明文超过最大长度限度！");
+        }, 500);
+        
+    }
+    
+}
+
+function decodeFromBase64(base64) {
+    const binaryString = atob(base64);
+    return new Uint8Array(binaryString.length).map((_, i) => binaryString.charCodeAt(i));
+}
+
+async function encryptData(fixedKey) {
+    showLoading();
+    try {
+        const iv = window.crypto.getRandomValues(new Uint8Array(12));
+        const encodedIV = encodeToBase64(iv);
+        
+        const plaintext = document.getElementById('plaintext').value;
+        const encoder = new TextEncoder();
+        const encodedPlaintext = encoder.encode(plaintext);
+
+        const ciphertext = await window.crypto.subtle.encrypt(
+            { name: "AES-GCM", iv },
+            fixedKey,
+            encodedPlaintext
+        );
+
+        const fullMessage = `HEF.${encodedIV}.${encodeToBase64(ciphertext)}`;
+        document.getElementById('ciphertext').value = fullMessage;
+    } catch (e) {
+        console.error("Encryption failed", e);
+    }
+    hideLoading();
+            showToast("加密结束");
+}
+
+async function decryptData(fixedKey) {
+    showLoading();
+    try {
+        const fullMessage = document.getElementById('ciphertext').value;
+        if (!fullMessage.startsWith("HEF.")) {
+            throw new Error("Ciphertext does not start with the expected key header.");
+        }
+        const [_, encodedIV, encodedCiphertext] = fullMessage.split('.');
+        
+        const iv = decodeFromBase64(encodedIV);
+        const ciphertext = decodeFromBase64(encodedCiphertext);
+
+        const decrypted = await window.crypto.subtle.decrypt(
+            { name: "AES-GCM", iv },
+            fixedKey,
+            ciphertext
+        );
+        document.getElementById('remoteDecryptedText').value = new TextDecoder().decode(decrypted);
+    } catch (e) {
+        console.error("Decryption failed", e);
+    }
+    hideLoading();
+            showToast("解密结束");
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
+    const fixedKeyMaterial = "Hocloud_TechnologyCreativeStudio";
+    const fixedKey = await importFixedKey(fixedKeyMaterial);
+    
+    document.getElementById('encryptButton').addEventListener('click', () => encryptData(fixedKey));
+    document.getElementById('decryptButton').addEventListener('click', () => decryptData(fixedKey));
+});
+function encryptedtext() {
+            var copyText = document.getElementById("ciphertext");
+            copyText.select();
+            document.execCommand("copy");
+            showToast("复制成功");
+        }
+        async function readFileAsArrayBuffer(file) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsArrayBuffer(file);
+    });
+}
+
+document.getElementById('fileEncryptButton').addEventListener('click', async () => {
+    const file = document.getElementById('fileInput').files[0];
+    if (!file) {
+        showToast("请选择一个文件");
+        return;
+    }
+    showLoading();
+    try {
+        const arrayBuffer = await readFileAsArrayBuffer(file);
+        const fixedKeyMaterial = "Hocloud_TechnologyCreativeStudio";
+        const fixedKey = await importFixedKey(fixedKeyMaterial);
+        const iv = window.crypto.getRandomValues(new Uint8Array(12));
+        
+        // 加密文件内容
+        const ciphertext = await window.crypto.subtle.encrypt(
+            { name: "AES-GCM", iv },
+            fixedKey,
+            new Uint8Array(arrayBuffer)
+        );
+        
+        // IV转换为Base64字符串
+        const encodedIV = encodeToBase64(iv);
+        
+        // 构建最终的加密文件内容，包括头部标识、Base64编码的IV和密文
+        // 首先，将"HEF."转换为Uint8Array
+        const headerBytes = new TextEncoder().encode("HEF.");
+        // 将Base64编码的IV转换为Uint8Array以便组合
+        const base64IVBytes = new TextEncoder().encode(encodedIV);
+        
+        // 计算总长度以创建最终数组
+        const totalLength = headerBytes.length + base64IVBytes.length + ciphertext.byteLength;
+        const finalContent = new Uint8Array(totalLength);
+        
+        // 组合所有部分
+        finalContent.set(headerBytes, 0); // 设置头部
+        finalContent.set(base64IVBytes, headerBytes.length); // 设置Base64编码的IV
+        finalContent.set(new Uint8Array(ciphertext), headerBytes.length + base64IVBytes.length); // 设置密文
+        
+        // 创建包含最终内容的Blob
+        const encryptedFileBlob = new Blob([finalContent], { type: 'application/octet-stream' });
+        
+        // 下载链接及后续操作...
+        const url = URL.createObjectURL(encryptedFileBlob);
+        const downloadLink = document.createElement('a');
+        downloadLink.href = url;
+        downloadLink.download = 'encryptedFile.HEF';
+        downloadLink.click();
+        URL.revokeObjectURL(url);
+        hideLoading();
+        showToast("文件加密并下载完成");
+    } catch (e) {
+        console.error("File encryption failed", e);
+        hideLoading();
+    }
+});
+
+document.getElementById('fileDecryptButton').addEventListener('click', async () => {
+    const file = document.getElementById('fileInput').files[0];
+    if (!file) {
+        showToast("请选择一个加密文件");
+        return;
+    }
+    showLoading();
+    try {
+        const arrayBuffer = await readFileAsArrayBuffer(file);
+        const fixedKeyMaterial = "Hocloud_TechnologyCreativeStudio";
+        const fixedKey = await importFixedKey(fixedKeyMaterial);
+        const fullMessage = new Uint8Array(arrayBuffer);
+        
+        // 验证文件头部
+        const headerBytes = fullMessage.slice(0, 4);
+        const header = new TextDecoder().decode(headerBytes);
+        if (header !== "HEF.") {
+            console.log("File header bytes:", headerBytes); // 显示原始字节以供调试
+            throw new Error("Encrypted file does not start with the expected header");
+        }
+        
+        // 提取Base64编码的IV和密文
+        const encodedIVBytes = fullMessage.slice(4, 20);
+        const encodedCiphertextBytes = fullMessage.slice(20);
+        
+        // 解码Base64 IV
+        const encodedIV = Array.from(encodedIVBytes).map(byte => String.fromCharCode(byte)).join('');
+        const decodedIV = Uint8Array.from(window.atob(encodedIV), c => c.charCodeAt(0));
+        
+        // 将密文部分转换为ArrayBuffer
+        const ciphertextArrayBuffer = encodedCiphertextBytes.buffer;
+        
+        // 解密
+        const decrypted = await window.crypto.subtle.decrypt(
+            { name: "AES-GCM", iv: decodedIV },
+            fixedKey,
+            ciphertextArrayBuffer
+        );
+        
+        // 创建解密文件Blob
+        const decryptedFileBlob = new Blob([decrypted], { type: file.type });
+        const url = URL.createObjectURL(decryptedFileBlob);
+        const downloadLink = document.createElement('a');
+        downloadLink.href = url;
+        downloadLink.download = 'decrypted_' + file.name;
+        downloadLink.click();
+        URL.revokeObjectURL(url);
+        
+        hideLoading();
+        showToast("文件解密并下载完成");
+    } catch (e) {
+        console.error("File decryption failed", e);
+        showToast("解密文件时发生错误，请检查文件是否正确加密或尝试重新选择文件。");
+        hideLoading();
+    }
+});
+    </script>
+        <script>
+    document.getElementById('remoteDecryptButton').addEventListener('click', async () => {
+        const receivedCiphertext = document.getElementById('receivedCiphertext').value;
+        if (!receivedCiphertext.startsWith("HEF.")) {
+            showToast("加密文件无效，请检查！正确的加密文件应该以“HEF.”开头");
+            return;
+        }
+        try {
+            // 确保使用与加密端相同的密钥
+            const fixedKeyMaterial = "Hocloud_TechnologyCreativeStudio";
+            const fixedKey = await importFixedKey(fixedKeyMaterial);
+            await decryptRemoteData(fixedKey, receivedCiphertext);
+        } catch (e) {
+            console.error("Decryption failed", e);
+        }
+    });
+    
+    async function decryptRemoteData(fixedKey, remoteCiphertext) {
+        showLoading();
+        try {
+            const [_, encodedIV, encodedCiphertext] = remoteCiphertext.split('.');
+            const iv = decodeFromBase64(encodedIV);
+            const ciphertext = decodeFromBase64(encodedCiphertext);
+            const decrypted = await window.crypto.subtle.decrypt(
+                { name: "AES-GCM", iv },
+                fixedKey,
+                ciphertext
+            );
+            document.getElementById('remoteDecryptedText').value = new TextDecoder().decode(decrypted);
+        } catch (e) {
+            console.error("Remote decryption failed", e);
+        }
+        hideLoading();
+            showToast("解密结束");
+    }
+    function decryptedtext() {
+            var copyText = document.getElementById("remoteDecryptedText");
+            copyText.select();
+            document.execCommand("copy");
+            showToast("复制成功");
+        }
+    </script>
+
+</body>
+</html>
