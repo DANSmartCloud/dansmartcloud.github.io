@@ -147,11 +147,14 @@
 }
 
 /* 如果需要调整大小或样式，请自定义以下属性 */
+
     </style>
 </head>
 <body>
     <div class="crypto-tool">
+ 
         <h2>HodEasyCode</h2>
+ 
         <div id="loadingSpinner" class="spinner">
             <i class="fas fa-spinner fa-pulse"></i>
         </div>
@@ -162,6 +165,8 @@
             <button id="encryptButton">加密</button>
             <p>···</p>
             <button type="button" class="copy-button" onclick="encryptedtext()" data-clipboard-target="#ciphertext">复制密文</button>
+            <p>···</p>
+            <button onclick="javascript:location.reload()">刷新清空</button>
         </div>
         <label for="ciphertext">密文</label>
         <textarea id="ciphertext" rows="5" readonly></textarea>
@@ -172,6 +177,9 @@
         <button id="remoteDecryptButton">解密</button>
         <p>···</p>
         <button type="button" class="copy-button" onclick="decryptedtext()" data-clipboard-target="#remoteDecryptedText">复制明文</button>
+        <p>···</p>
+        <button onclick="javascript:location.reload()">刷新清空</button>
+
     </div>
     <label for="remoteDecryptedText">明文</label>
     <textarea id="remoteDecryptedText" rows="5" readonly></textarea>
