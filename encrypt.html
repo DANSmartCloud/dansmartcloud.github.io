@@ -98,11 +98,63 @@
             padding: 15px 0;
             margin: 0;
         }
+        textarea {
+            backdrop-filter: blur(5px);
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+
+        .fa-spinner {
+            animation: spin 1s infinite linear;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* 定义toast容器的基础样式 */
+.toast {
+    position: fixed;
+    bottom: 20px; /* 调整此值可改变与底部的距离 */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999; /* 确保toast在页面其他元素之上 */
+    pointer-events: none; /* 防止toast干扰页面下方元素的点击 */
+}
+
+/* 内部元素，用于包裹实际消息内容 */
+
+
+/* 当toast显示时应用的类 */
+.toast.show {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s; /* 确保显示时立即可见 */
+}
+        #loadingSpinner {
+    position: fixed; /* 这使得元素相对于浏览器窗口定位 */
+    top: 50%; /* 将元素垂直居中（如果需要） */
+    left: 50%; /* 将元素水平居中（如果需要） */
+    transform: translate(-50%, -50%); /* 调整以确保居中对齐 */
+    z-index: 9999; /* 设置一个高的z-index确保它浮于其他内容之上 */
+    display: none;
+    justify-content: center;
+    align-items: center; /* 如果div里有文本或图标，这有助于居中它们 */
+    /*pointer-events: none; *//* 防止加载指示器干扰页面的点击事件 */
+    
+    
+}
+
+/* 如果需要调整大小或样式，请自定义以下属性 */
     </style>
 </head>
 <body>
     <div class="crypto-tool">
         <h2>HodEasyCode</h2>
+        <div id="loadingSpinner" class="spinner">
+            <i class="fas fa-spinner fa-pulse"></i>
+        </div>
         <h3>加密操作</h3>
         <label for="plaintext">明文</label>
         <textarea id="plaintext" rows="5"></textarea>
@@ -123,8 +175,60 @@
     </div>
     <label for="remoteDecryptedText">明文</label>
     <textarea id="remoteDecryptedText" rows="5" readonly></textarea>
+    <h4>禾云信创-HodEasyCode加解密工具·版本1.0</h4>
+    <h4>云云探索者自研算法，版权所有，严禁商用！</h4>
     </div>
     <script>
+        function showLoading() {
+            document.getElementById('loadingSpinner').style.display = 'block';
+        }
+
+        function hideLoading() {
+            const loadingSpinner = document.getElementById('loadingSpinner');
+            setTimeout(() => {
+                document.getElementById('loadingSpinner').style.display = 'none';
+                setTimeout(() => document.body.removeChild(toastElement), 300);
+            }, 1000);
+
+        }
+
+        function showToast(message) {
+    console.log("Show Toast function called with message:", message);
+    const toastElement = document.createElement('div');
+    toastElement.className = 'toast';
+    toastElement.innerHTML = `<div>${message}</div>`;
+    toastElement.style.cssText = `
+        position: fixed; /* 固定位置 */
+        bottom: 20px; /* 距离底部的距离 */
+        left: 50%; /* 水平居中 */
+        transform: translateX(-50%); /* 居中调整 */
+        padding: 10px 20px; /* 内边距 */
+        background-color: #1FC5F9; /* 背景色 */
+        color: #fff; /* 文字颜色 */
+        border-radius: 5px; /* 圆角 */
+        z-index: 1000; /* 确保在最上层 */
+        opacity: 0; /* 初始不透明度 */
+        visibility: visible; /* 确保可见 */
+        transition: opacity 0.5s ease; /* 添加过渡效果 */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    `;
+    document.body.appendChild(toastElement);
+
+    // 使用setTimeout来控制显示和隐藏
+    setTimeout(() => {
+        toastElement.style.opacity = '1'; // 使toast逐渐显示
+    }, 50); // 这里可以调整以控制显示的延迟
+
+    setTimeout(() => {
+        toastElement.style.opacity = '0'; // 使toast逐渐隐藏
+        setTimeout(() => {
+            document.body.removeChild(toastElement);
+        }, 300); // 确保隐藏动画完成后移除元素
+    }, 2000); // 2秒后开始隐藏动画
+}
+
+// 示例调用
+showToast('欢迎使用HodEasyCode加解密工具!');
        async function importFixedKey(keyMaterial) {
     if (keyMaterial.length * 8 !== 256) {
         throw new Error("Fixed key material must be 32 bytes long for AES-256");
@@ -148,6 +252,7 @@ function decodeFromBase64(base64) {
 }
 
 async function encryptData(fixedKey) {
+    showLoading();
     try {
         const iv = window.crypto.getRandomValues(new Uint8Array(12));
         const encodedIV = encodeToBase64(iv);
@@ -167,9 +272,12 @@ async function encryptData(fixedKey) {
     } catch (e) {
         console.error("Encryption failed", e);
     }
+    hideLoading();
+            showToast("加密结束");
 }
 
 async function decryptData(fixedKey) {
+    showLoading();
     try {
         const fullMessage = document.getElementById('ciphertext').value;
         if (!fullMessage.startsWith("HEC.")) {
@@ -189,6 +297,8 @@ async function decryptData(fixedKey) {
     } catch (e) {
         console.error("Decryption failed", e);
     }
+    hideLoading();
+            showToast("解密结束");
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -198,18 +308,18 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('encryptButton').addEventListener('click', () => encryptData(fixedKey));
     document.getElementById('decryptButton').addEventListener('click', () => decryptData(fixedKey));
 });
-function encryptedtext(){
-    var copyText = document.getElementById("ciphertext");
-    copyText.select();
-    document.execCommand("copy");
-    alert("复制成功");
-}
+function encryptedtext() {
+            var copyText = document.getElementById("ciphertext");
+            copyText.select();
+            document.execCommand("copy");
+            showToast("复制成功");
+        }
     </script>
         <script>
     document.getElementById('remoteDecryptButton').addEventListener('click', async () => {
         const receivedCiphertext = document.getElementById('receivedCiphertext').value;
         if (!receivedCiphertext.startsWith("HEC.")) {
-            alert("密文无效，请检查！正确的密文应该以“HEC.”开头");
+            showToast("密文无效，请检查！正确的密文应该以“HEC.”开头");
             return;
         }
         try {
@@ -223,6 +333,7 @@ function encryptedtext(){
     });
     
     async function decryptRemoteData(fixedKey, remoteCiphertext) {
+        showLoading();
         try {
             const [_, encodedIV, encodedCiphertext] = remoteCiphertext.split('.');
             const iv = decodeFromBase64(encodedIV);
@@ -236,13 +347,16 @@ function encryptedtext(){
         } catch (e) {
             console.error("Remote decryption failed", e);
         }
+        hideLoading();
+            showToast("解密结束");
     }
-    function decryptedtext(){
-        var copyText = document.getElementById("remoteDecryptedText");
-        copyText.select();
-        document.execCommand("copy");
-        alert("复制成功");
-    }
+    function decryptedtext() {
+            var copyText = document.getElementById("remoteDecryptedText");
+            copyText.select();
+            document.execCommand("copy");
+            showToast("复制成功");
+        }
     </script>
+
 </body>
 </html>
