@@ -464,7 +464,7 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
     outline: 0;
     border: none;
     vertical-align: baseline;
-    background: #e0e1e2 none;
+    background: #007BFF none;
     color: #0009;
     font-family: Lato, Helvetica Neue, Arial, Helvetica, sans-serif;
     margin: 0 .25em 0 0;
@@ -2117,7 +2117,7 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
 
 .ui.blue.button:hover,
 .ui.blue.buttons .button:hover {
-    background-color: #1678c2;
+    background-color: #007BFF;
     color: #fff;
     text-shadow: none
 }
@@ -2154,15 +2154,15 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
 .ui.basic.blue.button:hover,
 .ui.basic.blue.buttons .button:hover {
     background: 0 0 !important;
-    box-shadow: 0 0 0 1px #1678c2 inset !important;
-    color: #1678c2 !important
+    box-shadow: 0 0 0 1px #007BFF inset !important;
+    color: #007BFF !important
 }
 
 .ui.basic.blue.button:focus,
 .ui.basic.blue.buttons .button:focus {
     background: 0 0 !important;
     box-shadow: 0 0 0 1px #0d71bb inset !important;
-    color: #1678c2 !important
+    color: #007BFF !important
 }
 
 .ui.basic.blue.active.button,
@@ -3647,7 +3647,7 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
 
 .ui.primary.button:hover,
 .ui.primary.buttons .button:hover {
-    background-color: #1678c2;
+    background-color: #007BFF;
     color: #fff;
     text-shadow: none
 }
@@ -3684,15 +3684,15 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
 .ui.basic.primary.button:hover,
 .ui.basic.primary.buttons .button:hover {
     background: 0 0 !important;
-    box-shadow: 0 0 0 1px #1678c2 inset !important;
-    color: #1678c2 !important
+    box-shadow: 0 0 0 1px #007BFF inset !important;
+    color: #007BFF !important
 }
 
 .ui.basic.primary.button:focus,
 .ui.basic.primary.buttons .button:focus {
     background: 0 0 !important;
     box-shadow: 0 0 0 1px #0d71bb inset !important;
-    color: #1678c2 !important
+    color: #007BFF !important
 }
 
 .ui.basic.primary.active.button,
@@ -6131,7 +6131,7 @@ a.ui.inverted.teal.header:hover {
 }
 
 a.ui.blue.header:hover {
-    color: #1678c2 !important
+    color: #007BFF !important
 }
 
 .ui.blue.dividing.header {
@@ -13715,8 +13715,8 @@ a.ui.basic.teal.label:hover {
 
 .ui.blue.labels .label:hover,
 a.ui.blue.label:hover {
-    background-color: #1678c2 !important;
-    border-color: #1678c2 !important;
+    background-color: #007BFF !important;
+    border-color: #007BFF !important;
     color: #fff !important
 }
 
@@ -13738,8 +13738,8 @@ a.ui.blue.label:hover {
 .ui.basic.blue.labels a.label:hover,
 a.ui.basic.blue.label:hover {
     background-color: #fff !important;
-    color: #1678c2 !important;
-    border-color: #1678c2 !important
+    color: #007BFF !important;
+    border-color: #007BFF !important
 }
 
 .ui.violet.label,
@@ -24035,7 +24035,7 @@ a.ui.card:hover {
 .ui.blue.card:hover,
 .ui.blue.cards>.card:hover,
 .ui.cards>.blue.card:hover {
-    box-shadow: 0 0 0 1px #d4d4d5, 0 2px #1678c2, 0 1px 3px #bcbdbd
+    box-shadow: 0 0 0 1px #d4d4d5, 0 2px #007BFF, 0 1px 3px #bcbdbd
 }
 
 .ui.cards>.violet.card,
