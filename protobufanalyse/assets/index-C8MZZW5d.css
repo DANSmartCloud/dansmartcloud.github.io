@@ -2105,7 +2105,7 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
 
 .ui.blue.button,
 .ui.blue.buttons .button {
-    background-color: #2185d0;
+    background-color: #007BFF;
     color: #fff;
     text-shadow: none;
     background-image: none
@@ -2147,8 +2147,8 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
 
 .ui.basic.blue.button,
 .ui.basic.blue.buttons .button {
-    box-shadow: 0 0 0 1px #2185d0 inset !important;
-    color: #2185d0 !important
+    box-shadow: 0 0 0 1px #007BFF inset !important;
+    color: #007BFF !important
 }
 
 .ui.basic.blue.button:hover,
@@ -3635,7 +3635,7 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
 
 .ui.primary.button,
 .ui.primary.buttons .button {
-    background-color: #2185d0;
+    background-color: #007BFF;
     color: #fff;
     text-shadow: none;
     background-image: none
@@ -3677,8 +3677,8 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
 
 .ui.basic.primary.button,
 .ui.basic.primary.buttons .button {
-    box-shadow: 0 0 0 1px #2185d0 inset !important;
-    color: #2185d0 !important
+    box-shadow: 0 0 0 1px #007BFF inset !important;
+    color: #007BFF !important
 }
 
 .ui.basic.primary.button:hover,
@@ -6127,7 +6127,7 @@ a.ui.inverted.teal.header:hover {
 }
 
 .ui.blue.header {
-    color: #2185d0 !important
+    color: #007BFF !important
 }
 
 a.ui.blue.header:hover {
@@ -6135,7 +6135,7 @@ a.ui.blue.header:hover {
 }
 
 .ui.blue.dividing.header {
-    border-bottom: 2px solid #2185d0
+    border-bottom: 2px solid #007BFF
 }
 
 .ui.inverted.blue.header {
@@ -6629,7 +6629,7 @@ i.inverted.circular.teal.icon {
 }
 
 i.blue.icon {
-    color: #2185d0 !important
+    color: #007BFF !important
 }
 
 i.inverted.blue.icon {
@@ -6638,7 +6638,7 @@ i.inverted.blue.icon {
 
 i.inverted.bordered.blue.icon,
 i.inverted.circular.blue.icon {
-    background-color: #2185d0 !important;
+    background-color: #007BFF !important;
     color: #fff !important
 }
 
@@ -13708,8 +13708,8 @@ a.ui.basic.teal.label:hover {
 
 .ui.blue.label,
 .ui.blue.labels .label {
-    background-color: #2185d0 !important;
-    border-color: #2185d0 !important;
+    background-color: #007BFF !important;
+    border-color: #007BFF !important;
     color: #fff !important
 }
 
@@ -13731,8 +13731,8 @@ a.ui.blue.label:hover {
 
 .ui.basic.blue.label {
     background: none #fff !important;
-    color: #2185d0 !important;
-    border-color: #2185d0 !important
+    color: #007BFF !important;
+    border-color: #007BFF !important
 }
 
 .ui.basic.blue.labels a.label:hover,
@@ -16485,11 +16485,11 @@ ol.ui.horizontal.list li:before {
 }
 
 .ui.blue.segment:not(.inverted) {
-    border-top: 2px solid #2185d0 !important
+    border-top: 2px solid #007BFF !important
 }
 
 .ui.inverted.blue.segment {
-    background-color: #2185d0 !important;
+    background-color: #007BFF !important;
     color: #fff !important
 }
 
@@ -19569,7 +19569,7 @@ ol.ui.horizontal.list li:before {
 .ui.grid>.blue.column,
 .ui.grid>.blue.row,
 .ui.grid>.row>.blue.column {
-    background-color: #2185d0 !important;
+    background-color: #007BFF !important;
     color: #fff
 }
 
@@ -21267,8 +21267,8 @@ ol.ui.horizontal.list li:before {
 
 .ui.blue.menu .active.item,
 .ui.menu .blue.active.item {
-    border-color: #2185d0 !important;
-    color: #2185d0 !important
+    border-color: #007BFF !important;
+    color: #007BFF !important
 }
 
 .ui.menu .violet.active.item,
@@ -21481,7 +21481,7 @@ ol.ui.horizontal.list li:before {
 
 .ui.inverted.blue.menu,
 .ui.inverted.menu .blue.active.item {
-    background-color: #2185d0
+    background-color: #007BFF
 }
 
 .ui.inverted.blue.menu .item:before {
@@ -22292,8 +22292,8 @@ ol.ui.horizontal.list li:before {
 
 .ui.blue.message {
     background-color: #dff0ff;
-    color: #2185d0;
-    box-shadow: 0 0 0 1px #2185d0 inset, 0 0 0 0 transparent
+    color: #007BFF;
+    box-shadow: 0 0 0 1px #007BFF inset, 0 0 0 0 transparent
 }
 
 .ui.blue.message .header {
@@ -22961,11 +22961,11 @@ ol.ui.horizontal.list li:before {
 }
 
 .ui.blue.table {
-    border-top: .2em solid #2185d0
+    border-top: .2em solid #007BFF
 }
 
 .ui.inverted.blue.table {
-    background-color: #2185d0 !important;
+    background-color: #007BFF !important;
     color: #fff !important
 }
 
@@ -24029,7 +24029,7 @@ a.ui.card:hover {
 .ui.blue.card,
 .ui.blue.cards>.card,
 .ui.cards>.blue.card {
-    box-shadow: 0 0 0 1px #d4d4d5, 0 2px #2185d0, 0 1px 3px #d4d4d5
+    box-shadow: 0 0 0 1px #d4d4d5, 0 2px #007BFF, 0 1px 3px #d4d4d5
 }
 
 .ui.blue.card:hover,
@@ -25548,7 +25548,7 @@ a.ui.card:hover {
 .ui.blue.statistic>.value,
 .ui.blue.statistics .statistic>.value,
 .ui.statistics .blue.statistic>.value {
-    color: #2185d0
+    color: #007BFF
 }
 
 .ui.statistics .violet.statistic>.value,
@@ -26375,7 +26375,7 @@ a.ui.card:hover {
 
 .ui.toggle.checkbox input:checked~.box:before,
 .ui.toggle.checkbox input:checked~label:before {
-    background-color: #2185d0 !important
+    background-color: #007BFF !important
 }
 
 .ui.toggle.checkbox input:checked~.box:after,
@@ -29596,7 +29596,7 @@ a.ui.nag {
 }
 
 .ui.blue.progress .bar {
-    background-color: #2185d0
+    background-color: #007BFF
 }
 
 .ui.blue.inverted.progress .bar {
