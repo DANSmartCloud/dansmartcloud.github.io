@@ -488,7 +488,7 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
 }
 
 .ui.button:hover {
-    background-color: #cacbcd;
+    background-color: #57b3b9;
     background-image: none;
     box-shadow: 0 0 0 1px transparent inset, 0 0 #22242626 inset;
     color: #000c
@@ -499,7 +499,7 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
 }
 
 .ui.button:focus {
-    background-color: #cacbcd;
+    background-color: #57b3b9;
     color: #000c;
     background-image: "" !important;
     box-shadow: "" !important
