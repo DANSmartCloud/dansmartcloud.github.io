@@ -1158,7 +1158,7 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
 .ui.basic.inverted.button,
 .ui.basic.inverted.buttons .button {
     background-color: transparent !important;
-    color: #f9fafb !important;
+    color: #33ccff !important;
     box-shadow: 0 0 0 2px #ffffff80 inset !important
 }
 
@@ -16059,7 +16059,7 @@ ol.ui.horizontal.list li:before {
     overflow: visible;
     padding: 1em;
     min-height: 18rem;
-    background: #f9fafb;
+    background: #33ccff;
     border-color: #22242626;
     box-shadow: 0 2px 25px #2224260d inset
 }
@@ -16941,7 +16941,7 @@ ol.ui.horizontal.list li:before {
 .ui.steps .link.step:hover:after,
 .ui.steps a.step:hover,
 .ui.steps a.step:hover:after {
-    background: #f9fafb;
+    background: #33ccff;
     color: #000c
 }
 
@@ -22413,7 +22413,7 @@ ol.ui.horizontal.list li:before {
 
 .ui.table thead th {
     cursor: auto;
-    background: #f9fafb;
+    background: #33ccff;
     text-align: inherit;
     color: #000000de;
     padding: .92857143em .78571429em;
@@ -22448,7 +22448,7 @@ ol.ui.horizontal.list li:before {
 .ui.table tfoot th {
     cursor: auto;
     border-top: 1px solid rgba(34, 36, 38, .15);
-    background: #f9fafb;
+    background: #33ccff;
     text-align: inherit;
     color: #000000de;
     padding: .78571429em;
@@ -26037,7 +26037,7 @@ a.ui.card:hover {
 
 .ui.checkbox .box:active:before,
 .ui.checkbox label:active:before {
-    background: #f9fafb;
+    background: #33ccff;
     border-color: #22242659
 }
 
@@ -28100,7 +28100,7 @@ select.ui.dropdown {
 }
 
 .ui.modal>.actions {
-    background: #f9fafb;
+    background: #33ccff;
     padding: 1rem;
     border-top: 1px solid rgba(34, 36, 38, .15);
     text-align: right
@@ -29483,7 +29483,7 @@ a.ui.nag {
 }
 
 .ui.inverted.progress .bar>.progress {
-    color: #f9fafb
+    color: #33ccff
 }
 
 .ui.inverted.progress>.label {
@@ -30052,7 +30052,7 @@ a.ui.nag {
 
 .ui.category.search>.results .category .result:hover,
 .ui.search>.results .result:hover {
-    background: #f9fafb
+    background: #33ccff
 }
 
 .ui.search .action:hover {
