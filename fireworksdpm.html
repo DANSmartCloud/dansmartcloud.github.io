@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 新增移动端meta标签 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>量子烟花实验室</title>
+    <style>
+        /* 新增触摸反馈样式 */
+        canvas:active {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- 原有代码保持不变 -->
+
+    <script>
+        // 在原有代码基础上新增以下内容：
+
+        // 移动端事件监听（新增部分）
+        canvas.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            isMouseDown = true;
+            handleTouch(e);
+        });
+
+        canvas.addEventListener('touchend', (e) => {
+            e.preventDefault();
+            isMouseDown = false;
+            handleTouch(e, true);
+        });
+
+        canvas.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+            handleTouch(e);
+        });
+
+        // 统一处理触摸坐标
+        const handleTouch = (e, isEnd = false) => {
+            const touch = e.touches[0];
+            mouseX = touch ? touch.clientX : e.clientX;
+            mouseY = touch ? touch.clientY : e.clientY;
+            
+            if(isEnd) {
+                createFirework(mouseX, mouseY);
+            }
+        };
+
+        // 修改音频播放策略（原有audio标签保持不变）
+        let audioEnabled = false;
+        document.body.addEventListener('touchstart', () => {
+            if(!audioEnabled) {
+                audio.play().then(() => {
+                    audio.pause();
+                    audio.currentTime = 0;
+                    audioEnabled = true;
+                });
+            }
+        }, { once: true });
+
+        // 适配Retina屏幕（新增）
+        const adjustDPR = () => {
+            const dpr = window.devicePixelRatio || 1;
+            canvas.width = window.innerWidth * dpr;
+            canvas.height = window.innerHeight * dpr;
+            ctx.scale(dpr, dpr);
+        };
+        adjustDPR();
+
+        // 修改窗口resize事件
+        window.addEventListener('resize', () => {
+            adjustDPR();
+        });
+
+        // 优化粒子数量（移动端性能调整）
+        const particleCount = window.innerWidth < 768 ? 150 : 300;
+    </script>
+</body>
+</html>
