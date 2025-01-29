@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>量子烟花实验室</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: #000;
+            cursor: crosshair;
+        }
+        canvas {
+            position: absolute;
+        }
+        #stats {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            color: #fff;
+            font-family: Arial;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <div id="stats">量子烟花系统已就绪 | 当前模式：超新星爆发</div>
+
+    <audio id="explosionSound" src="https://actions.google.com/sounds/v1/explosions/explosion_1.ogg"></audio>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const audio = document.getElementById('explosionSound');
+        
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const particles = [];
+        const particleCount = 300;
+        const gravity = 0.05;
+        let mouseX = 0;
+        let mouseY = 0;
+        let isMouseDown = false;
+
+        // 高级颜色生成器
+        const generateColor = () => {
+            const hue = Math.random() * 360;
+            return `hsl(${hue}, 100%, 50%)`;
+        };
+
+        class Particle {
+            constructor(x, y, isOrigin) {
+                this.x = x;
+                this.y = y;
+                this.alpha = 1;
+                this.decay = Math.random() * 0.015 + 0.015;
+                this.size = Math.random() * 3 + 1;
+                
+                if(isOrigin) {
+                    this.velocity = {
+                        x: (Math.random() - 0.5) * 10,
+                        y: (Math.random() - 0.5) * 10
+                    };
+                    this.color = '#FFF';
+                } else {
+                    const angle = Math.random() * Math.PI * 2;
+                    const speed = Math.cos(Math.random() * Math.PI / 2) * 15;
+                    this.velocity = {
+                        x: Math.cos(angle) * speed,
+                        y: Math.sin(angle) * speed
+                    };
+                    this.color = generateColor();
+                }
+            }
+
+            update() {
+                this.velocity.y += gravity;
+                this.x += this.velocity.x;
+                this.y += this.velocity.y;
+                this.alpha -= this.decay;
+            }
+
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = this.alpha;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        // 生成烟花
+        const createFirework = (x, y) => {
+            audio.currentTime = 0;
+            audio.play();
+            
+            // 创建初始粒子
+            for(let i = 0; i < 10; i++) {
+                particles.push(new Particle(x, y, true));
+            }
+
+            // 创建爆炸粒子
+            for(let i = 0; i < particleCount; i++) {
+                particles.push(new Particle(x, y));
+            }
+        };
+
+        // 动画循环
+        const animate = () => {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // 绘制拖尾效果
+            if(isMouseDown) {
+                ctx.fillStyle = generateColor();
+                ctx.beginPath();
+                ctx.arc(mouseX, mouseY, 5, 0, Math.PI * 2);
+                ctx.fill();
+            }
+
+            particles.forEach((particle, index) => {
+                particle.update();
+                particle.draw();
+                
+                if(particle.alpha <= 0) {
+                    particles.splice(index, 1);
+                }
+            });
+
+            requestAnimationFrame(animate);
+        };
+
+        // 事件监听
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        canvas.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        canvas.addEventListener('mousedown', () => {
+            isMouseDown = true;
+        });
+
+        canvas.addEventListener('mouseup', (e) => {
+            isMouseDown = false;
+            createFirework(e.clientX, e.clientY);
+        });
+
+        // 启动
+        animate();
+
+        // 自动演示模式
+        setInterval(() => {
+            if(Math.random() > 0.8) {
+                createFirework(
+                    Math.random() * canvas.width,
+                    Math.random() * canvas.height
+                );
+            }
+        }, 2000);
+
+        // 键盘控制
+        window.addEventListener('keydown', (e) => {
+            if(e.code === 'Space') {
+                createFirework(
+                    Math.random() * canvas.width,
+                    Math.random() * canvas.height
+        

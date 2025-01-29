@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 新增移动端meta标签 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>量子烟花实验室</title>
+    <style>
+        /* 新增触摸反馈样式 */
+        canvas:active {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- 原有代码保持不变 -->
+
+    <script>
+        // 在原有代码基础上新增以下内容：
+
+        // 移动端事件监听（新增部分）
+        canvas.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            isMouseDown = true;
+            handleTouch(e);
+        });
+
+        canvas.addEventListener('touchend', (e) => {
+            e.preventDefault();
+            isMouseDown = false;
+            handleTouch(e, true);
+        });
+
+        canvas.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+            handleTouch(e);
+        });
+
+        // 统一处理触摸坐标
+        const handleTouch = (e, isEnd = false) => {
+            const touch = e.touches[0];
+            mouseX = touch ? touch.clientX : e.clientX;
+            mouseY = touch ? touch.clientY : e.clientY;
+            
+            if(isEnd) {
+                createFirework(mouseX, mouseY);
+            }
+        };
+
+        // 修改音频播放策略（原有audio标签保持不变）
+        let audioEnabled = false;
+        document.body.addEventListener('touchstart', () => {
+            if(!audioEnabled) {
+                audio.play().then(() => {
+                    audio.pause();
+                    audio.currentTime = 0;
+                    audioEnabled = true;
+                });
+            }
+        }, { once: true });
+
+        // 适配Retina屏幕（新增）
+        const adjustDPR = () => {
+            const dpr = window.devicePixelRatio || 1;
+            canvas.width = window.innerWidth * dpr;
+            canvas.height = window.innerHeight * dpr;
+            ctx.scale(dpr, dpr);
+        };
+        adjustDPR();
+
+        // 修改窗口resize事件
+        window.addEventListener('resize', () => {
+            adjustDPR();
+        });
+
+        // 优化粒子数量（移动端性能调整）
+        const particleCount = window.innerWidth < 768 ? 150 : 300;
+    </script>
+<script>
+    // 在animate函数顶部添加以下代码
+    const drawLightSaber = () => {
+        if(!isMouseDown) return;
+
+        // 生成等离子剑刃
+        const gradient = ctx.createLinearGradient(mouseX, mouseY-100, mouseX, mouseY+100);
+        gradient.addColorStop(0, 'rgba(255,255,255,0.2)');
+        gradient.addColorStop(0.3, generateColor());
+        gradient.addColorStop(0.7, generateColor());
+        gradient.addColorStop(1, 'rgba(255,255,255,0.2)');
+
+        // 剑体核心
+        ctx.save();
+        ctx.shadowBlur = 30;
+        ctx.shadowColor = generateColor();
+        ctx.lineWidth = 8;
+        ctx.strokeStyle = gradient;
+        ctx.beginPath();
+        ctx.moveTo(mouseX, mouseY-100);
+        ctx.lineTo(mouseX, mouseY+100);
+        ctx.stroke();
+        ctx.restore();
+
+        // 离子火花特效
+        for(let i=0; i<5; i++){
+            particles.push(new Particle(
+                mouseX + (Math.random()-0.5)*20,
+                mouseY + (Math.random()-0.5)*100,
+                true
+            ));
+        }
+
+        // 触发空间扭曲
+        ctx.filter = `blur(${Math.random()*3}px)`;
+        setTimeout(() => ctx.filter = 'none', 50);
+    };
+
+    // 修改animate函数，在第一行添加
+    const animate = () => {
+        drawLightSaber(); // 新增这行
+        // 原有代码不变...
+    };
+
+    // 添加量子震荡音效
+    const audio2 = new Audio('https://actions.google.com/sounds/v1/science_fiction/blaster_1.ogg');
+    
+    // 修改mousedown事件
+    canvas.addEventListener('mousedown', () => {
+        isMouseDown = true;
+        audio2.play(); // 光剑启动音效
+        audio2.loop = true;
+    });
+
+    canvas.addEventListener('mouseup', () => {
+        audio2.pause(); // 光剑关闭音效
+        audio2.currentTime = 0;
+    });
+
+    // 添加重力扭曲特效
+    let gravityWave = 0;
+    document.addEventListener('keypress', (e) => {
+        if(e.code === 'KeyX') {
+            gravityWave = gravityWave ? 0 : 0.3;
+            ctx.filter = 'hue-rotate(180deg)';
+            setTimeout(() => ctx.filter = 'none', 500);
+        }
+    });
+
+    // 在Particle类的update方法中修改
+    update() {
+        // 原有代码...
+        this.velocity.y += gravity + (Math.sin(this.x/50) * gravityWave); // 新增扭曲效果
+    }
+</script>
+</body>
+</html>
