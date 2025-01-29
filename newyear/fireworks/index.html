@@ -3,12 +3,12 @@
 
 <head>
 	<script>
-		alert("增强版在线烟花，尝试更改烟花设置，效果更好！")
+		alert("2025新年快乐！");
 	</script>
 
 	<meta charset="UTF-8">
 
-	<title>DAN智云-在线放烟花plus</title>
+	<title>禾云信创-在线放烟花plus</title>
 
 	<style>
 		html,
@@ -147,6 +147,8 @@
 		body {
 			margin: 0;
 			padding: 0;
+			height: 100%;
+			overflow: hidden;
 		}
 
 		body {
@@ -166,11 +168,14 @@
 		}
 
 		#canvas-container {
-			background: #000 url(bg.jpg);
-			height: 400px;
-			margin: -200px 0 0 -300px;
+			background: #000 url(bg.jpg) no-repeat center center fixed;
+			background-size: cover;
+			height: 100vh;
+			left: 0;
+			margin: 0;
 			position: absolute;
-			width: 600px;
+			top: 0;
+			width: 100vw;
 			z-index: 2;
 		}
 
@@ -243,6 +248,7 @@
 	<script src='js/dat.gui.min.js'></script>
 
 	<script src="js/index.js"></script>
+	<script src="js/particleEffects.js"></script>
 
 </body>
 

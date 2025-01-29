@@ -20,13 +20,14 @@ a:hover {
 }
 
 #canvas-container {
-	background: #000 url(http://jackrugile.com/lab/fireworks-v2/images/bg.jpg);
-  height: 400px;
-	left: 50%;
-	margin: -200px 0 0 -300px;
+	background: #000 url(http://jackrugile.com/lab/fireworks-v2/images/bg.jpg) no-repeat center center fixed;
+	background-size: cover;
+	height: 100vh;
+	left: 0;
+	margin: 0;
 	position: absolute;
-	top: 50%;
-  width: 600px;
+	top: 0;
+	width: 100vw;
 	z-index: 2;
 }
 		
