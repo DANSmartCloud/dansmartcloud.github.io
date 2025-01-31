@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>五子棋人机对战</title>
+    <style>
+        body {
+            background: #2c3e50;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .game-container {
+            max-width: 800px;
+            margin-top: 20px;
+        }
+
+        canvas {
+            border: 3px solid #fff;
+            border-radius: 5px;
+            background: #3498db;
+        }
+
+        .controls {
+            margin-top: 10px;
+            text-align: center;
+            display: flex;
+            gap: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background: #e74c3c;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #c0392b;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <canvas id="gameCanvas" width="560"
+height="480"></canvas>
+        <div class="controls">
+            <button onclick="newGame()">新游戏</button>
+            <button onclick="playAgain()">再来一局
+</button>
+        </div>
+    </div>
+
+    <script>
+        const canvas =
+document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        let currentPlayer = 'black';
+        let gameActive = true;
+        let selectedPiece = null;
+
+        function initBoard() {
+            canvas.width = 7 * 40; // 棋盘行数
+            canvas.height = 5 * 40; // 棋盘列数
+
+            for (let i = 0; i < canvas.width; i += 40) {
+                ctx.beginPath();
+                ctx.moveTo(i, 0);
+                ctx.lineTo(i, canvas.height);
+                ctx.stroke();
+            }
+
+            for (let j = 0; j < canvas.height; j += 40)
+{
+                ctx.beginPath();
+                ctx.moveTo(0, j);
+                ctx.lineTo(canvas.width, j);
+                ctx.stroke();
+            }
+        }
+
+        function drawPiece(x, y, color) {
+            ctx.fillStyle = color;
+            ctx.beginPath();
+            ctx.arc(x + 20, y + 20, 15, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        function createGame() {
+            initBoard();
+
+            // 存储所有落子的位置
+            const pieces = [];
+            for (let i = 0; i < canvas.width; i += 40) {
+                pieces.push([]);
+                for (let j = 0; j < canvas.height; j +=
+40) {
+                    pieces[i][j] = null;
+                }
+            }
+
+            // 棋盘下标从0开始
+            return { ctx, pieces };
+        }
+
+        function newGame() {
+            createGame();
+            if (gameActive) {
+                gameActive = false;
+            }
+            draw();
+        }
+
+        function playAgain() {
+            if (!gameActive) {
+                newGame();
+            }
+        }
+
+        // 判断是否AI需要下子
+        const aiMove = () => {
+            if (!gameActive || currentPlayer === 'black')
+return;
+
+            // 随机选择一个可落子的位置
+            let moves = [];
+            for (let i = 0; i < canvas.width; i += 40) {
+                for (let j = 0; j < canvas.height; j +=
+40) {
+                    if (pieces[i/40][j/40] === null) {
+                        moves.push({x: i, y: j});
+                    }
+                }
+            }
+
+            if (moves.length > 0) {
+                const randomMove =
+moves[Math.floor(Math.random() * moves.length)];
+                pieces[randomMove.x/40][randomMove.y/40]
+= currentPlayer;
+                currentPlayer = currentPlayer === 'black'
+? 'white' : 'black';
+                selectedPiece = null;
+                draw();
+            } else {
+                // 结束游戏
+                if (gameActive) {
+                    gameActive = false;
+                    alert('AI已无法下子，游戏结束！');
+                }
+            }
+        }
+
+        function handleClick(x, y) {
+            const rect = canvas.getBoundingClientRect();
+            let boardX = Math.floor((x - rect.left) /
+40);
+            let boardY = Math.floor((y - rect.top) /
+40);
+
+            if (boardY < 0 || boardY >= pieces.length ||
+boardX < 0 || boardX >= pieces[0].length) return;
+
+            if (pieces[boardX][boardY] !== null) return; // 已经有棋子了
+
+            if (selectedPiece === null) {
+                selectedPiece = { x,   };
+                draw();
+            } else {
+                // 移除已选中的棋子
+                pieces[boardX][boardY] = currentPlayer;
+                selectedPiece = null;
+
+                // 检查胜利条件
+                if (checkWin(boardX, boardY)) {
+                    gameOver();
+                    return;
+                }
+
+                draw();
+            }
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (let i = 0; i < canvas.width; i += 40) {
+                ctx.beginPath();
+                ctx.moveTo(i, 0);
+                ctx.lineTo(i, canvas.height);
+                ctx.stroke();
+            }
+
+            for (let j = 0; j < canvas.height; j += 40) {
+                ctx.beginPath();
+                ctx.moveTo(0, j);
+                ctx.lineTo(canvas.width, j);
+                ctx.stroke();
+            }
+
+            // 绘制棋子
+            for (let i = 0; i < canvas.width; i += 40) {
+                for (let j = 0; j < canvas.height; j += 40) {
+                    if (pieces[i/40][j/40] === 'black') {
+                        drawPiece(i, j, '#2c3e50');
+                    } else if (pieces[i/40][j/40] === 'white') {
+                        drawPiece(i, j, '#3498db');
+                    }
+                }
+            }
+
+            // 绘制选中位置
+            if (selectedPiece) {
+                ctx.beginPath();
+                ctx.arc(selectedPiece.x + 20, selectedPiece.y + 20, 15, 0, Math.PI * 2);
+                ctx.fillStyle = currentPlayer;
+                ctx.fill();
+            }
+        }
+
+        function checkWin(x, y) {
+            const dx = pieces[x/40][y/40];
+            // 检查水平方向
+            for (let i = -2; i <= 2; i++) {
+                if (x + i < 0 || x + i >= canvas.width / 40) break;
+                if (pieces[(x + i)/40][y/40] !== dx) break;
+            }
+            else {
+                return true;
+            }
+
+            // 检查垂直方向
+            for (let j = -2; j <= 2; j++) {
+                if (y + j < 0 || y + j >= canvas.height / 40) break;
+                if (pieces[x/40][(y + j)/40] !== dx) break;
+            }
+            else {
+                return true;
+            }
+
+            // 检查对角线方向（左上到右下）
+            for (let k = -2; k <= 2; k++) {
+                let x1 = x + k;
+                let y1 = y + k;
+                if (x1 < 0 || y1 < 0) break;
+                let i = Math.floor(x1 / 40);
+                let j = Math.floor(y1 / 40);
+                if (pieces[i][j] !== dx) break;
+            }
+            else {
+                return true;
+            }
+
+            // 检查对角线方向（右上到左下）
+            for (let k = -2; k <= 2; k++) {
+                let x1 = x + k;
+                let y1 = y - k;
+                if (x1 < 0 || y1 < 0) break;
+                let i = Math.floor(x1 / 40);
+                let j = Math.floor(y1 / 40);
+                if (pieces[i][j] !== dx) break;
+            }
+            else {
+                return true;
+            }
+
+            return false;
+        }
+
+        function gameOver() {
+            gameActive = false;
+            alert('游戏结束！您已取得胜利!');
+        }
+
+        // 初始调用
+        newGame();
+
+        // 启动动画效果
+        const animation = setInterval(() => {
+            if (gameActive) {
+                draw();
+            }
+        }, 100);
+    };
+
+    // 调用解释函数
+    var explanation = Explain('Take turns placing your pieces. Try to connect four of your pieces in a row.', [
+        { type: 'text', content: '游戏规则' },
+        { type: 'code', content: 'AI会自动下子，但无法挑战现有的胜利' },
+        { type: 'image', content: '' },
+        { type: 'video', content: '' }
+    ]);
+    explanation.execute();
+</script>
