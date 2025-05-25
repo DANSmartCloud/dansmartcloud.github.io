@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网站导航中心</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f0f4f8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background: linear-gradient(135deg, #4e54c8, #8f94fb);
+            color: white;
+            width: 100%;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            width: 90%;
+            max-width: 1200px;
+            padding: 2rem 1rem 3rem;
+        }
+
+        .nav-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .nav-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+        }
+
+        .nav-link {
+            display: block;
+            padding: 2rem;
+            color: #333;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-align: center;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #4e54c8;
+        }
+
+        @media (max-width: 600px) {
+            .nav-card {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>禾云高考</h1>
+        <p style="opacity:0.9; font-size:1.2rem;">大数据分析报告</p>
+    </header>
+
+    <div class="nav-container">
+        <a href="BI.html" class="nav-card">
+            <div class="nav-link">生物学 页面</div>
+        </a>
+        <a href="CH.html" class="nav-card">
+            <div class="nav-link">化学 页面</div>
+        </a>
+        <a href="CN.html" class="nav-card">
+            <div class="nav-link">语文 页面</div>
+        </a>
+        <a href="EN.html" class="nav-card">
+            <div class="nav-link">英语 页面</div>
+        </a>
+        <a href="MA.html" class="nav-card">
+            <div class="nav-link">数学 页面</div>
+        </a>
+        <a href="PH.html" class="nav-card">
+            <div class="nav-link">物理 页面</div>
+        </a>
+    </div>
+</body>
+</html>
