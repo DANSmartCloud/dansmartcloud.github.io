@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>惊喜</title>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Serif SC', serif;
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            height: 100vh;
+            overflow: hidden;
+            color: #fff;
+        }
+        
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        
+        .container {
+            position: relative;
+            z-index: 2;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        /* 引导界面 */
+        #start-screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 10;
+            transition: opacity 1s ease;
+        }
+        
+        #start-screen h1 {
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            font-family: 'Ma Shan Zheng', cursive;
+        }
+        
+        #start-screen p {
+            font-size: 1.8rem;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+        
+        .start-button {
+            background: linear-gradient(to right, #ff8a00, #da1b60);
+            color: white;
+            font-size: 1.5rem;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            font-family: 'Ma Shan Zheng', cursive;
+        }
+        
+        .start-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(to right, #ff9a00, #e91e63);
+        }
+        
+        /* 文字轮播 */
+        .text-carousel {
+            position: relative;
+            height: 200px;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        
+        .text-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        
+        .text-slide.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .message {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            line-height: 1.3;
+        }
+        
+        .signature {
+            position: absolute;
+            bottom: 10%;
+            font-size: 2.2rem;
+            opacity: 0;
+            transition: opacity 2s ease;
+            font-family: 'Ma Shan Zheng', cursive;
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        
+        .signature.show {
+            opacity: 1;
+        }
+        
+        /* 音乐控制 */
+        .music-control {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 5;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .music-control i {
+            font-size: 24px;
+            color: white;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .message {
+                font-size: 2.2rem;
+            }
+            
+            .signature {
+                font-size: 1.8rem;
+            }
+            
+            #start-screen h1 {
+                font-size: 2.5rem;
+            }
+            
+            #start-screen p {
+                font-size: 1.3rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .message {
+                font-size: 1.8rem;
+            }
+            
+            .signature {
+                font-size: 1.5rem;
+            }
+            
+            .start-button {
+                font-size: 1.2rem;
+                padding: 12px 30px;
+            }
+        }
+        
+        /* 心形动画 */
+        .heart {
+            position: absolute;
+            font-size: 24px;
+            color: #e91e63;
+            opacity: 0;
+            z-index: 3;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 粒子背景容器 -->
+    <div id="particles-js"></div>
+    
+    <!-- 引导界面 -->
+    <div id="start-screen">
+        <h1>父亲节快乐</h1>
+        <p>点击下方按钮，查看给您的特别祝福</p>
+        <button class="start-button">开启祝福</button>
+    </div>
+    
+    <!-- 主内容区 -->
+    <div class="container">
+        <div class="text-carousel">
+            <div class="text-slide">
+                <div class="message">今天是父亲节</div>
+            </div>
+            <div class="text-slide">
+                <div class="message">感谢您一直以来的陪伴与照顾</div>
+            </div>
+            <div class="text-slide">
+                <div class="message">您是全天下最好的爸爸</div>
+            </div>
+            <div class="text-slide">
+                <div class="message">我由衷祝福您</div>
+            </div>
+            <div class="text-slide">
+                <div class="message">父亲节快乐</div>
+            </div>
+        </div>
+        <div class="signature">您的儿子 陈德林、陈德朋</div>
+    </div>
+    
+    <!-- 音乐控制 -->
+    <div class="music-control" id="music-control">
+        <i>♪</i>
+    </div>
+    
+    <!-- 音频元素 -->
+    <audio id="background-music" loop>
+        <source src="ALTL.mp3" type="audio/mpeg">
+    </audio>
+    
+    <script>
+        // 粒子背景配置
+        const particlesConfig = {
+            particles: {
+                number: {
+                    value: 80,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: "#ffffff"
+                },
+                shape: {
+                    type: ["circle", "triangle", "heart"],
+                    stroke: {
+                        width: 0,
+                        color: "#000000"
+                    }
+                },
+                opacity: {
+                    value: 0.5,
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 1,
+                        opacity_min: 0.1,
+                        sync: false
+                    }
+                },
+                size: {
+                    value: 5,
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 4,
+                        size_min: 0.3,
+                        sync: false
+                    }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#ffffff",
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: "none",
+                    random: true,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false,
+                    attract: {
+                        enable: true,
+                        rotateX: 600,
+                        rotateY: 1200
+                    }
+                }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: "grab"
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: "push"
+                    },
+                    resize: true
+                },
+                modes: {
+                    grab: {
+                        distance: 140,
+                        line_linked: {
+                            opacity: 1
+                        }
+                    },
+                    push: {
+                        particles_nb: 4
+                    }
+                }
+            },
+            retina_detect: true
+        };
+        
+        // DOM元素
+        const startScreen = document.getElementById('start-screen');
+        const startButton = document.querySelector('.start-button');
+        const textSlides = document.querySelectorAll('.text-slide');
+        const signature = document.querySelector('.signature');
+        const musicControl = document.getElementById('music-control');
+        const bgMusic = document.getElementById('background-music');
+        
+        // 初始化变量
+        let currentSlide = 0;
+        let animationInterval;
+        
+        // 初始化粒子背景
+        function initParticles() {
+            particlesJS('particles-js', particlesConfig);
+            
+            // 点击粒子区域创建心形
+            const canvasEl = document.querySelector('#particles-js > canvas');
+            canvasEl.addEventListener('click', createHeart);
+        }
+        
+        // 创建心形动画
+        function createHeart(e) {
+            const heart = document.createElement('div');
+            heart.innerHTML = '❤';
+            heart.classList.add('heart');
+            heart.style.left = e.clientX + 'px';
+            heart.style.top = e.clientY + 'px';
+            document.body.appendChild(heart);
+            
+            // 应用动画
+            setTimeout(() => {
+                heart.style.animation = 'float 2s ease-out forwards';
+            }, 10);
+            
+            // 移除元素
+            setTimeout(() => {
+                heart.remove();
+            }, 2000);
+        }
+        
+        // 开始文字轮播
+        function startTextCarousel() {
+            // 显示第一个幻灯片
+            textSlides[0].classList.add('active');
+            currentSlide = 0;
+            
+            // 设置轮播间隔
+            animationInterval = setInterval(() => {
+                // 隐藏当前幻灯片
+                textSlides[currentSlide].classList.remove('active');
+                
+                // 移到下一个幻灯片
+                currentSlide = (currentSlide + 1) % textSlides.length;
+                
+                // 显示新幻灯片
+                textSlides[currentSlide].classList.add('active');
+                
+                // 当显示最后一条消息时显示署名
+                if (currentSlide === textSlides.length - 1) {
+                    setTimeout(() => {
+                        signature.classList.add('show');
+                    }, 1500);
+                }
+            }, 4000); // 每4秒切换一次
+        }
+        
+        // 开始背景音乐
+        function startBackgroundMusic() {
+            bgMusic.volume = 0.5;
+            
+            // 解决自动播放限制
+            const playPromise = bgMusic.play();
+            
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.log("自动播放失败，需要用户交互");
+                });
+            }
+        }
+        
+        // 音乐控制
+        musicControl.addEventListener('click', () => {
+            if (bgMusic.paused) {
+                bgMusic.play();
+                musicControl.innerHTML = '<i>♪</i>';
+            } else {
+                bgMusic.pause();
+                musicControl.innerHTML = '<i>🔇</i>';
+            }
+        });
+        
+        // 开始按钮事件
+        startButton.addEventListener('click', () => {
+            // 淡出引导界面
+            startScreen.style.opacity = 0;
+            
+            setTimeout(() => {
+                startScreen.style.display = 'none';
+                
+                // 初始化粒子效果
+                initParticles();
+                
+                // 开始文字轮播
+                startTextCarousel();
+                
+                // 开始背景音乐
+                startBackgroundMusic();
+            }, 1000);
+        });
+        
+        // 响应式调整
+        window.addEventListener('resize', () => {
+            // 重新初始化粒子以适应新尺寸
+            if (startScreen.style.display === 'none') {
+                particlesJS('particles-js', particlesConfig);
+            }
+        });
+    </script>
+</body>
+</html>
